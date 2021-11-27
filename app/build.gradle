@@ -56,6 +56,8 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.amplifyframework:core:1.30.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
@@ -70,4 +72,5 @@ dependencies {
     implementation "com.github.sundeepk:compact-calendar-view:$rootProject.compactCalendarViewVersion"
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
 }
