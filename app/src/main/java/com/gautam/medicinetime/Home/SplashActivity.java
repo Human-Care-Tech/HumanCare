@@ -58,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
 //            Log.e(TAG, "Could not initialize Amplify", error);
 //        }
 //    }
-//
+
 //    private void createNotificationChannel() {
 //        // Create the NotificationChannel, but only on API 26+ because
 //        // the NotificationChannel class is new and not in the support library
