@@ -12,6 +12,9 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        classpath 'com.amplifyframework:amplify-tools-gradle-plugin:1.0.2'
+
     }
 }
 
@@ -37,3 +40,5 @@ ext {
     butterKniferVersion = '10.2.1'
     junitVersion = '4.13'
 }
+
+apply plugin: 'com.amplifyframework.amplifytools'
