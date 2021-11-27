@@ -4,9 +4,15 @@ package com.gautam.medicinetime.Home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.amplifyframework.AmplifyException;
+import com.amplifyframework.api.aws.AWSApiPlugin;
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -44,21 +50,21 @@ public class SplashActivity extends AppCompatActivity {
         }, 2000);
     }
 //
-//    private void configureAmplify() {
-//        try {
-//            Amplify.addPlugin(new AWSDataStorePlugin());
-//            Amplify.addPlugin(new AWSApiPlugin());
-//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+    private void configureAmplify() {
+        try {
+            Amplify.addPlugin(new AWSDataStorePlugin());
+            Amplify.addPlugin(new AWSApiPlugin());
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
 //            Amplify.addPlugin(new AWSS3StoragePlugin());
 //            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin(getApplication()));
-//            Amplify.configure(getApplicationContext());
-//
-//            Log.i(TAG, "Initialized Amplify");
-//        } catch (AmplifyException error) {
-//            Log.e(TAG, "Could not initialize Amplify", error);
-//        }
-//    }
-//
+            Amplify.configure(getApplicationContext());
+
+            Log.i(TAG, "Initialized Amplify");
+        } catch (AmplifyException error) {
+            Log.e(TAG, "Could not initialize Amplify", error);
+        }
+    }
+
 //    private void createNotificationChannel() {
 //        // Create the NotificationChannel, but only on API 26+ because
 //        // the NotificationChannel class is new and not in the support library
