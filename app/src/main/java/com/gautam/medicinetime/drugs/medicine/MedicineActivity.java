@@ -152,4 +152,5 @@ public class MedicineActivity extends AppCompatActivity {
         isExpanded = !isExpanded;
         appBarLayout.setExpanded(isExpanded, true);
     }
+
 }
