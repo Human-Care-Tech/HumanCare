@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
@@ -24,26 +25,24 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-//
-//        configureAmplify();
+
+        configureAmplify();
 //        createNotificationChannel();
 //
-//        AuthUser currentUser= Amplify.Auth.getCurrentUser();
-
-        // Adding Splash Page
+        AuthUser currentUser= Amplify.Auth.getCurrentUser();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                if(currentUser==null){
-//                    Intent i = new Intent(splash.this, LoginActivity.class);
-//                    startActivity(i);
-//                }
-//                else {
+                if(currentUser==null){
+                    Intent i = new Intent(SplashActivity.this, LogIn.class);
+                    startActivity(i);
+                }
+                else {
 
                     Intent i = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(i);
-//                }
+                }
 
                 finish();
             }

@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".Home.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Home.LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Home.EmailConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.JoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.SplashActivity"
             android:exported="true">
             <intent-filter>
