@@ -75,4 +75,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
+    implementation 'com.amplifyframework:aws-api:1.28.3'
+    implementation 'com.amplifyframework:aws-datastore:1.28.3'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.28.3'
+
 }
