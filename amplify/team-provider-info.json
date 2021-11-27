@@ -10,6 +10,11 @@
       "StackName": "amplify-humancare-dev-172916",
       "StackId": "arn:aws:cloudformation:eu-central-1:452597155788:stack/amplify-humancare-dev-172916/c15effc0-4f96-11ec-93a3-025294b9a04e",
       "AmplifyAppId": "dhk3kiprb5zpm"
+    },
+    "categories": {
+      "auth": {
+        "humancarec93b1ff0": {}
+      }
     }
   }
 }
