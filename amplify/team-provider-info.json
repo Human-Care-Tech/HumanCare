@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-humancare-dev-172916-authRole",
+      "UnauthRoleArn": "arn:aws:iam::452597155788:role/amplify-humancare-dev-172916-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::452597155788:role/amplify-humancare-dev-172916-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-humancare-dev-172916-deployment",
+      "UnauthRoleName": "amplify-humancare-dev-172916-unauthRole",
+      "StackName": "amplify-humancare-dev-172916",
+      "StackId": "arn:aws:cloudformation:eu-central-1:452597155788:stack/amplify-humancare-dev-172916/c15effc0-4f96-11ec-93a3-025294b9a04e",
+      "AmplifyAppId": "dhk3kiprb5zpm"
+    }
+  }
+}
