@@ -15,7 +15,22 @@
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/fragment_reminder.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_history.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_medicine.xml" value="0.36666666666666664" />
+<<<<<<< HEAD
         <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.1" />
+=======
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_add_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_medicine.xml" value="0.16" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_monthly_report.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_reminder_actvity.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/component_day_view.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_add_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_history.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_reminder.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_history.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_medicine.xml" value="0.209375" />
+>>>>>>> 77d67e3598af6056514f2979aabe1417771bcc0b
       </map>
     </option>
   </component>
