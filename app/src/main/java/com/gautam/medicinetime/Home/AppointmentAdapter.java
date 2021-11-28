@@ -61,7 +61,9 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
                 Toast.makeText(context, "Submitted!", Toast.LENGTH_SHORT).show();
                 String Task1 = viewHolder.doctorName.getText().toString();
                 editor.putString("DoctorName", Task1);
-
+                editor.putString("id",Doctor.getId());
+                //TODO
+//                editor.putString("lat",Doctor.);
                 editor.apply();
                 Intent gotToStd = new Intent(context, makeAppointment.class);
                 context.startActivity(gotToStd);
