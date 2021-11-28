@@ -10,16 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
-
-import com.amplifyframework.auth.AuthUser;
-
 import com.amplifyframework.api.graphql.model.ModelMutation;
-
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Doctor;
-import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -49,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Intent i = new Intent(SplashActivity.this, PatientInfoActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(i);
                 }
 
@@ -62,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
         try {
             Amplify.addPlugin(new AWSDataStorePlugin());
             Amplify.addPlugin(new AWSApiPlugin());
-//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
 //            Amplify.addPlugin(new AWSS3StoragePlugin());
 //            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin(getApplication()));
             Amplify.configure(getApplicationContext());
