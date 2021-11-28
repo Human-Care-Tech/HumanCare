@@ -15,6 +15,7 @@ subscription OnCreateDoctor {
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -48,6 +49,7 @@ subscription OnUpdateDoctor {
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -81,6 +83,7 @@ subscription OnDeleteDoctor {
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -108,6 +111,7 @@ subscription OnCreateAppointment {
     lon
     symptoms
     date
+    time
     status
     _version
     _deleted
@@ -126,6 +130,7 @@ subscription OnUpdateAppointment {
     lon
     symptoms
     date
+    time
     status
     _version
     _deleted
@@ -144,7 +149,44 @@ subscription OnDeleteAppointment {
     lon
     symptoms
     date
+    time
     status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    name
+    email
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    name
+    email
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    name
+    email
     _version
     _deleted
     _lastChangedAt

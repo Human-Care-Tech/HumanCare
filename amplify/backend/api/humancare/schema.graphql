@@ -12,12 +12,17 @@ type Appointment @model @key(name: "ByDoctor", fields: ["doctorId"]){
     doctorId:ID!
     user:String!
     doctor:String
-    lat:String
-    lon:String
+    lat:Float
+    lon:Float
     symptoms:String
     date :String
+    time :String
     status:String
 
 }
 
-
+type User @model {
+    id: ID!
+    name: String
+    email: String
+}

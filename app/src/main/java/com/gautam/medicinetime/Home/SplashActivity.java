@@ -10,16 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
-
-import com.amplifyframework.auth.AuthUser;
-
 import com.amplifyframework.api.graphql.model.ModelMutation;
-
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Doctor;
-//import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
+
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -44,12 +41,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(currentUser==null){
+
                     Intent i = new Intent(SplashActivity.this, LogIn.class);
                     startActivity(i);
                 }
                 else {
-
-                    Intent i = new Intent(SplashActivity.this, PatientInfoActivity.class);
+                    System.out.println(currentUser.getUsername()+"hlooooooooooooooooooooooooooooo");
+                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
                     startActivity(i);
                 }
 

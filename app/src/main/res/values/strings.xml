@@ -32,7 +32,7 @@
     <string name="phone">Phone Number</string>
     <string name="address">Address</string>
     <string name="conditions">I have read, understood and accepted registration rules</string>
-// PROFILE STRINGS
+    // PROFILE STRINGS
     <string name="title_activity_profile">Profile</string>
     <string name="action_settings">Settings</string>
     <string name="sign_in" />
@@ -50,5 +50,4 @@
     <string name="register">Register</string>
     <string name="the_code_is_wrong_try_again" />
     <string name="enter_the_code_sent_to_your_email" />
->>>>>>> da2d9cb19c5e74a42b0324e300998d23478af9f8
 </resources>

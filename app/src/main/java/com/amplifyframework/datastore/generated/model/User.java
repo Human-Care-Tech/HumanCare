@@ -22,8 +22,10 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 public final class User implements Model {
   public static final QueryField ID = field("User", "id");
   public static final QueryField NAME = field("User", "name");
+  public static final QueryField EMAIL = field("User", "email");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String") String name;
+  private final @ModelField(targetType="String") String email;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime createdAt;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime updatedAt;
   public String getId() {
@@ -34,6 +36,10 @@ public final class User implements Model {
       return name;
   }
   
+  public String getEmail() {
+      return email;
+  }
+  
   public Temporal.DateTime getCreatedAt() {
       return createdAt;
   }
@@ -42,9 +48,10 @@ public final class User implements Model {
       return updatedAt;
   }
   
-  private User(String id, String name) {
+  private User(String id, String name, String email) {
     this.id = id;
     this.name = name;
+    this.email = email;
   }
   
   @Override
@@ -57,6 +64,7 @@ public final class User implements Model {
       User user = (User) obj;
       return ObjectsCompat.equals(getId(), user.getId()) &&
               ObjectsCompat.equals(getName(), user.getName()) &&
+              ObjectsCompat.equals(getEmail(), user.getEmail()) &&
               ObjectsCompat.equals(getCreatedAt(), user.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), user.getUpdatedAt());
       }
@@ -67,6 +75,7 @@ public final class User implements Model {
     return new StringBuilder()
       .append(getId())
       .append(getName())
+      .append(getEmail())
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .toString()
@@ -79,6 +88,7 @@ public final class User implements Model {
       .append("User {")
       .append("id=" + String.valueOf(getId()) + ", ")
       .append("name=" + String.valueOf(getName()) + ", ")
+      .append("email=" + String.valueOf(getEmail()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()))
       .append("}")
@@ -100,36 +110,47 @@ public final class User implements Model {
   public static User justId(String id) {
     return new User(
       id,
+      null,
       null
     );
   }
   
   public CopyOfBuilder copyOfBuilder() {
     return new CopyOfBuilder(id,
-      name);
+      name,
+      email);
   }
   public interface BuildStep {
     User build();
     BuildStep id(String id);
     BuildStep name(String name);
+    BuildStep email(String email);
   }
   
 
   public static class Builder implements BuildStep {
     private String id;
     private String name;
+    private String email;
     @Override
      public User build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
         
         return new User(
           id,
-          name);
+          name,
+          email);
     }
     
     @Override
      public BuildStep name(String name) {
         this.name = name;
+        return this;
+    }
+    
+    @Override
+     public BuildStep email(String email) {
+        this.email = email;
         return this;
     }
     
@@ -145,14 +166,20 @@ public final class User implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, String name) {
+    private CopyOfBuilder(String id, String name, String email) {
       super.id(id);
-      super.name(name);
+      super.name(name)
+        .email(email);
     }
     
     @Override
      public CopyOfBuilder name(String name) {
       return (CopyOfBuilder) super.name(name);
+    }
+    
+    @Override
+     public CopyOfBuilder email(String email) {
+      return (CopyOfBuilder) super.email(email);
     }
   }
   

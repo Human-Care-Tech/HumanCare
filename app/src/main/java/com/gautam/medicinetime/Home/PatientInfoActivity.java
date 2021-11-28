@@ -54,7 +54,7 @@ public class PatientInfoActivity extends AppCompatActivity {
             } else if (femaleBtn.isChecked()) {
                 gender = "Female";
             }
-            Intent intent = new Intent(PatientInfoActivity.this, PatientProfileActivity.class );
+            Intent intent = new Intent(PatientInfoActivity.this, LogIn.class );
             editor.putString("name", fullName);
             System.out.println(fullName+"NAMEEEEEEEEEEEEEEEEEEE");
             editor.putString("age", age);
