@@ -10,10 +10,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
+
 import com.amplifyframework.auth.AuthUser;
+
+import com.amplifyframework.api.graphql.model.ModelMutation;
+
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
+import com.amplifyframework.datastore.generated.model.Doctor;
+import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -27,6 +33,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         configureAmplify();
+
+//        testttest();
+
 //        createNotificationChannel();
 //
         AuthUser currentUser= Amplify.Auth.getCurrentUser();
@@ -53,7 +62,7 @@ public class SplashActivity extends AppCompatActivity {
         try {
             Amplify.addPlugin(new AWSDataStorePlugin());
             Amplify.addPlugin(new AWSApiPlugin());
-            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
 //            Amplify.addPlugin(new AWSS3StoragePlugin());
 //            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin(getApplication()));
             Amplify.configure(getApplicationContext());
@@ -62,6 +71,40 @@ public class SplashActivity extends AppCompatActivity {
         } catch (AmplifyException error) {
             Log.e(TAG, "Could not initialize Amplify", error);
         }
+    }
+
+    private void testttest(){
+
+            Log.i("MyAmplifyApp", "Initialized Amplify");
+            Doctor doc1 = Doctor.builder()
+                    .name("doc1").specialty("bons").location("amman-jordan")
+                    .build();
+
+            Amplify.API.mutate(
+                    ModelMutation.create(doc1),
+                    response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
+                    error -> Log.e("MyAmplifyApp", "Create failed", error)
+            );
+
+            Doctor doc2 = Doctor.builder()
+                    .name("doc2").specialty("eyes").location("sengafora")
+                    .build();
+
+            Amplify.API.mutate(
+                    ModelMutation.create(doc2),
+                    response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
+                    error -> Log.e("MyAmplifyApp", "Create failed", error)
+            );
+
+            Doctor doc3 = Doctor.builder()
+                    .name("doc3").specialty("jazzar").location("India")
+                    .build();
+
+            Amplify.API.mutate(
+                    ModelMutation.create(doc3),
+                    response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
+                    error -> Log.e("MyAmplifyApp", "Create failed", error)
+            );
     }
 
 //    private void createNotificationChannel() {

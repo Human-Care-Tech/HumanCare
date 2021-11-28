@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+
+import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Doctor;
 import com.gautam.medicinetime.R;
 import com.gautam.medicinetime.drugs.medicine.MedicineActivity;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button signInBbutton = findViewById(R.id.signin);
         signInBbutton.setOnClickListener(view -> {
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         });
+
     }
 
 
@@ -48,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent(this, MedicineActivity.class);
         startActivity(intent);
 
+    }
+    public void GotoDocList(View view){
+        Intent intent= new Intent(this, DoctorList.class);
+        startActivity(intent);
     }
 
 

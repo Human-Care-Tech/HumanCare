@@ -1,27 +1,153 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTodo {
-  onCreateTodo {
+subscription OnCreateDoctor {
+  onCreateDoctor {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
 }
-subscription OnUpdateTodo {
-  onUpdateTodo {
+subscription OnUpdateDoctor {
+  onUpdateDoctor {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
 }
-subscription OnDeleteTodo {
-  onDeleteTodo {
+subscription OnDeleteDoctor {
+  onDeleteDoctor {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateAppointment {
+  onCreateAppointment {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateAppointment {
+  onUpdateAppointment {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteAppointment {
+  onDeleteAppointment {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
