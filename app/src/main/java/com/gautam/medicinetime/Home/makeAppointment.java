@@ -14,5 +14,5 @@ public class makeAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_make_appointment);
     }
 
-    
+
 }
