@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Intent i = new Intent(SplashActivity.this, PatientInfoActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(i);
                 }
 
@@ -62,7 +62,7 @@ public class SplashActivity extends AppCompatActivity {
         try {
             Amplify.addPlugin(new AWSDataStorePlugin());
             Amplify.addPlugin(new AWSApiPlugin());
-//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
 //            Amplify.addPlugin(new AWSS3StoragePlugin());
 //            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin(getApplication()));
             Amplify.configure(getApplicationContext());
