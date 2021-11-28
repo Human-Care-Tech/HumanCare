@@ -1,36 +1,171 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+mutation CreateDoctor(
+  $input: CreateDoctorInput!
+  $condition: ModelDoctorConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
+  createDoctor(input: $input, condition: $condition) {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
 }
-mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+mutation UpdateDoctor(
+  $input: UpdateDoctorInput!
+  $condition: ModelDoctorConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
+  updateDoctor(input: $input, condition: $condition) {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
 }
-mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+mutation DeleteDoctor(
+  $input: DeleteDoctorInput!
+  $condition: ModelDoctorConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
+  deleteDoctor(input: $input, condition: $condition) {
     id
     name
-    description
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateAppointment(
+  $input: CreateAppointmentInput!
+  $condition: ModelAppointmentConditionInput
+) {
+  createAppointment(input: $input, condition: $condition) {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateAppointment(
+  $input: UpdateAppointmentInput!
+  $condition: ModelAppointmentConditionInput
+) {
+  updateAppointment(input: $input, condition: $condition) {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteAppointment(
+  $input: DeleteAppointmentInput!
+  $condition: ModelAppointmentConditionInput
+) {
+  deleteAppointment(input: $input, condition: $condition) {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

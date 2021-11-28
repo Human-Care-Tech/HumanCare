@@ -1,26 +1,166 @@
 # this is an auto generated file. This will be overwritten
-query GetTodo($id: ID!) {
-  getTodo(id: $id) {
-    id
-    name
-    description
-    createdAt
-    updatedAt
-  }
-}
-query ListTodos(
-  $filter: ModelTodoFilterInput
+query SyncDoctors(
+  $filter: ModelDoctorFilterInput
   $limit: Int
   $nextToken: String
+  $lastSync: AWSTimestamp
 ) {
-  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  syncDoctors(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
     items {
       id
       name
-      description
+      specialty
+      location
+      appointments {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
+  }
+}
+query GetDoctor($id: ID!) {
+  getDoctor(id: $id) {
+    id
+    name
+    specialty
+    location
+    appointments {
+      items {
+        id
+        doctorId
+        user
+        doctor
+        lat
+        lon
+        symptoms
+        date
+        status
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListDoctors(
+  $filter: ModelDoctorFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDoctors(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      specialty
+      location
+      appointments {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncAppointments(
+  $filter: ModelAppointmentFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncAppointments(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      doctorId
+      user
+      doctor
+      lat
+      lon
+      symptoms
+      date
+      status
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetAppointment($id: ID!) {
+  getAppointment(id: $id) {
+    id
+    doctorId
+    user
+    doctor
+    lat
+    lon
+    symptoms
+    date
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListAppointments(
+  $filter: ModelAppointmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAppointments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      doctorId
+      user
+      doctor
+      lat
+      lon
+      symptoms
+      date
+      status
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
   }
 }

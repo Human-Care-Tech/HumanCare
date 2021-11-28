@@ -1,5 +1,21 @@
-type Todo @model {
-  id: ID!
-  name: String!
-  description: String
+type Doctor @model {
+
+    id:ID!
+    name:String!
+    specialty:String!
+    location:String!
+    appointments: [Appointment] @connection(keyName: "ByDoctor", fields: ["id"])
+}
+
+type Appointment @model @key(name: "ByDoctor", fields: ["doctorId"]){
+    id:ID!
+    doctorId:ID!
+    user:String!
+    doctor:String
+    lat:String
+    lon:String
+    symptoms:String
+    date :String
+    status:String
+
 }
