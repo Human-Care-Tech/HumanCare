@@ -1,4 +1,9 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
 
 android {
     signingConfigs {
@@ -58,7 +63,15 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.google.android.gms:play-services-maps:18.0.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.guolindev.permissionx:permissionx:1.6.1'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.amazonaws:aws-android-sdk-pinpoint:2.33.0'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.35.0'
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics'
     implementation 'androidx.multidex:multidex:2.0.1'
 //    implementation 'com.amplifyframework:core:1.30.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')

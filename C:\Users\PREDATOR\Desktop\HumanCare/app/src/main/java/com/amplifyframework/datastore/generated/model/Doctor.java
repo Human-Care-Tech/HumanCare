@@ -1,5 +1,6 @@
 package com.amplifyframework.datastore.generated.model;
 
+import com.amplifyframework.core.model.annotations.HasMany;
 import com.amplifyframework.core.model.temporal.Temporal;
 
 import java.util.List;
@@ -16,16 +17,19 @@ import com.amplifyframework.core.model.query.predicate.QueryField;
 
 import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 
-/** This is an auto generated class representing the User type in your schema. */
+/** This is an auto generated class representing the Doctor type in your schema. */
 @SuppressWarnings("all")
-@ModelConfig(pluralName = "Users")
-public final class User implements Model {
-  public static final QueryField ID = field("User", "id");
-  public static final QueryField NAME = field("User", "name");
-  public static final QueryField EMAIL = field("User", "email");
+@ModelConfig(pluralName = "Doctors")
+public final class Doctor implements Model {
+  public static final QueryField ID = field("Doctor", "id");
+  public static final QueryField NAME = field("Doctor", "name");
+  public static final QueryField SPECIALTY = field("Doctor", "specialty");
+  public static final QueryField LOCATION = field("Doctor", "location");
   private final @ModelField(targetType="ID", isRequired = true) String id;
-  private final @ModelField(targetType="String") String name;
-  private final @ModelField(targetType="String") String email;
+  private final @ModelField(targetType="String", isRequired = true) String name;
+  private final @ModelField(targetType="String", isRequired = true) String specialty;
+  private final @ModelField(targetType="String", isRequired = true) String location;
+  private final @ModelField(targetType="Appointment") @HasMany(associatedWith = "doctorId", type = Appointment.class) List<Appointment> appointments = null;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime createdAt;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime updatedAt;
   public String getId() {
@@ -36,8 +40,16 @@ public final class User implements Model {
       return name;
   }
   
-  public String getEmail() {
-      return email;
+  public String getSpecialty() {
+      return specialty;
+  }
+  
+  public String getLocation() {
+      return location;
+  }
+  
+  public List<Appointment> getAppointments() {
+      return appointments;
   }
   
   public Temporal.DateTime getCreatedAt() {
@@ -48,10 +60,11 @@ public final class User implements Model {
       return updatedAt;
   }
   
-  private User(String id, String name, String email) {
+  private Doctor(String id, String name, String specialty, String location) {
     this.id = id;
     this.name = name;
-    this.email = email;
+    this.specialty = specialty;
+    this.location = location;
   }
   
   @Override
@@ -61,12 +74,13 @@ public final class User implements Model {
       } else if(obj == null || getClass() != obj.getClass()) {
         return false;
       } else {
-      User user = (User) obj;
-      return ObjectsCompat.equals(getId(), user.getId()) &&
-              ObjectsCompat.equals(getName(), user.getName()) &&
-              ObjectsCompat.equals(getEmail(), user.getEmail()) &&
-              ObjectsCompat.equals(getCreatedAt(), user.getCreatedAt()) &&
-              ObjectsCompat.equals(getUpdatedAt(), user.getUpdatedAt());
+      Doctor doctor = (Doctor) obj;
+      return ObjectsCompat.equals(getId(), doctor.getId()) &&
+              ObjectsCompat.equals(getName(), doctor.getName()) &&
+              ObjectsCompat.equals(getSpecialty(), doctor.getSpecialty()) &&
+              ObjectsCompat.equals(getLocation(), doctor.getLocation()) &&
+              ObjectsCompat.equals(getCreatedAt(), doctor.getCreatedAt()) &&
+              ObjectsCompat.equals(getUpdatedAt(), doctor.getUpdatedAt());
       }
   }
   
@@ -75,7 +89,8 @@ public final class User implements Model {
     return new StringBuilder()
       .append(getId())
       .append(getName())
-      .append(getEmail())
+      .append(getSpecialty())
+      .append(getLocation())
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .toString()
@@ -85,17 +100,18 @@ public final class User implements Model {
   @Override
    public String toString() {
     return new StringBuilder()
-      .append("User {")
+      .append("Doctor {")
       .append("id=" + String.valueOf(getId()) + ", ")
       .append("name=" + String.valueOf(getName()) + ", ")
-      .append("email=" + String.valueOf(getEmail()) + ", ")
+      .append("specialty=" + String.valueOf(getSpecialty()) + ", ")
+      .append("location=" + String.valueOf(getLocation()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()))
       .append("}")
       .toString();
   }
   
-  public static BuildStep builder() {
+  public static NameStep builder() {
       return new Builder();
   }
   
@@ -107,9 +123,10 @@ public final class User implements Model {
    * @param id the id of the existing item this instance will represent
    * @return an instance of this model with only ID populated
    */
-  public static User justId(String id) {
-    return new User(
+  public static Doctor justId(String id) {
+    return new Doctor(
       id,
+      null,
       null,
       null
     );
@@ -118,39 +135,64 @@ public final class User implements Model {
   public CopyOfBuilder copyOfBuilder() {
     return new CopyOfBuilder(id,
       name,
-      email);
+      specialty,
+      location);
   }
-  public interface BuildStep {
-    User build();
-    BuildStep id(String id);
-    BuildStep name(String name);
-    BuildStep email(String email);
+  public interface NameStep {
+    SpecialtyStep name(String name);
   }
   
 
-  public static class Builder implements BuildStep {
+  public interface SpecialtyStep {
+    LocationStep specialty(String specialty);
+  }
+  
+
+  public interface LocationStep {
+    BuildStep location(String location);
+  }
+  
+
+  public interface BuildStep {
+    Doctor build();
+    BuildStep id(String id);
+  }
+  
+
+  public static class Builder implements NameStep, SpecialtyStep, LocationStep, BuildStep {
     private String id;
     private String name;
-    private String email;
+    private String specialty;
+    private String location;
     @Override
-     public User build() {
+     public Doctor build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
         
-        return new User(
+        return new Doctor(
           id,
           name,
-          email);
+          specialty,
+          location);
     }
     
     @Override
-     public BuildStep name(String name) {
+     public SpecialtyStep name(String name) {
+        Objects.requireNonNull(name);
         this.name = name;
         return this;
     }
     
     @Override
-     public BuildStep email(String email) {
-        this.email = email;
+     public LocationStep specialty(String specialty) {
+        Objects.requireNonNull(specialty);
+        this.specialty = specialty;
+        return this;
+    }
+    
+    @Override
+     public BuildStep location(String location) {
+        Objects.requireNonNull(location);
+        this.location = location;
         return this;
     }
     
@@ -166,10 +208,11 @@ public final class User implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, String name, String email) {
+    private CopyOfBuilder(String id, String name, String specialty, String location) {
       super.id(id);
       super.name(name)
-        .email(email);
+        .specialty(specialty)
+        .location(location);
     }
     
     @Override
@@ -178,8 +221,13 @@ public final class User implements Model {
     }
     
     @Override
-     public CopyOfBuilder email(String email) {
-      return (CopyOfBuilder) super.email(email);
+     public CopyOfBuilder specialty(String specialty) {
+      return (CopyOfBuilder) super.specialty(specialty);
+    }
+    
+    @Override
+     public CopyOfBuilder location(String location) {
+      return (CopyOfBuilder) super.location(location);
     }
   }
   

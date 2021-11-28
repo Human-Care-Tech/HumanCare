@@ -18,6 +18,7 @@ mutation CreateDoctor(
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -54,6 +55,7 @@ mutation UpdateDoctor(
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -90,6 +92,7 @@ mutation DeleteDoctor(
         lon
         symptoms
         date
+        time
         status
         _version
         _deleted
@@ -120,6 +123,7 @@ mutation CreateAppointment(
     lon
     symptoms
     date
+    time
     status
     _version
     _deleted
@@ -141,6 +145,7 @@ mutation UpdateAppointment(
     lon
     symptoms
     date
+    time
     status
     _version
     _deleted
@@ -162,7 +167,53 @@ mutation DeleteAppointment(
     lon
     symptoms
     date
+    time
     status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    name
+    email
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    name
+    email
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    name
+    email
     _version
     _deleted
     _lastChangedAt
