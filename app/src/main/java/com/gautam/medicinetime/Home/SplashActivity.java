@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent i = new Intent(SplashActivity.this, PatientInfoActivity.class);
                     startActivity(i);
                 }
 
