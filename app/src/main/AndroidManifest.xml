@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".Home.PatientProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home.PatientInfoActivity"
+            android:exported="true" />
+        <activity
             android:name=".Home.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -20,9 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Home.Splash_Activity"
-            android:exported="false" />
         <activity
             android:name=".Home.MainActivity"
             android:exported="true">
