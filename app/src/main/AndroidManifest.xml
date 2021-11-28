@@ -30,6 +30,8 @@
         <activity
             android:name=".Home.EmailConfirmationActivity"
             android:exported="false" />
+
+
         <activity
             android:name=".Home.makeAppointment"
             android:exported="false" />
