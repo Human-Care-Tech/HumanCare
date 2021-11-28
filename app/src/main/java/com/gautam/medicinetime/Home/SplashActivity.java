@@ -10,16 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
-
-import com.amplifyframework.auth.AuthUser;
-
 import com.amplifyframework.api.graphql.model.ModelMutation;
-
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Doctor;
-import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {

@@ -1,17 +1,14 @@
 package com.gautam.medicinetime.Home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
-import com.amplifyframework.datastore.generated.model.Doctor;
 import com.gautam.medicinetime.R;
 import com.gautam.medicinetime.drugs.medicine.MedicineActivity;
 
@@ -44,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, LogIn.class);
             startActivity(intent);
 
+        });
+
+        Button goToProfile = findViewById(R.id.profileBtn);
+        goToProfile.setOnClickListener(view ->{
+            Intent intent= new Intent(this, PatientInfoActivity.class);
+            startActivity(intent);
         });
 
     }
