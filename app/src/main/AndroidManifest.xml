@@ -14,6 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+
+            android:name=".Home.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Home.LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Home.EmailConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.JoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.LoginActivity"
+
             android:name=".Home.makeAppointment"
             android:exported="false" />
         <activity
@@ -23,6 +38,7 @@
         <!-- android:exported="false" /> -->
         <activity
             android:name=".Home.Appointment_Activity"
+
             android:exported="false" />
         <activity
             android:name=".Home.SplashActivity"
