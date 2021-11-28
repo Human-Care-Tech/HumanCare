@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/drawable/app_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/drawable/background_take_medication.xml" value="0.3828125" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/drawable/ic_arrow_right.xml" value="0.3828125" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/drawable/toast_border_style.xml" value="0.3828125" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_email_confirmation.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_log_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_make_appointment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_maps.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_medicine.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_monthly_report.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_patient_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/activity_patient_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PREDATOR/Desktop/HumanCare/app/src/main/res/layout/customtoast_red.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/activity_add_medicine.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/activity_medicine.xml" value="0.20520833333333333" />

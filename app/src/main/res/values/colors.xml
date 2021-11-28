@@ -15,4 +15,7 @@
     <color name="profileBackground">#fff</color>
     <color name="blackTextColor">#000</color>
     <color name="profileEditTextColor">#707070</color>
+    <color name="alertColor">#494949</color>
+    <color name="light_font">#FBFBFB</color>
+    <color name="text_shadow">#7F000000</color>
 </resources>
