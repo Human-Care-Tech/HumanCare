@@ -13,6 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
+        <activity
+            android:name=".Home.PatientProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home.PatientInfoActivity"
+            android:exported="true" />
         <activity
 
             android:name=".Home.SignUp"
@@ -24,11 +31,6 @@
             android:name=".Home.EmailConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.JoinActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.LoginActivity"
-
             android:name=".Home.makeAppointment"
             android:exported="false" />
         <activity
