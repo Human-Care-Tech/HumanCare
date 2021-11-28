@@ -15,6 +15,16 @@ import com.gautam.medicinetime.R;
 
 public class SignUp extends AppCompatActivity {
 
+    public void onClickJoin(View view){
+        Intent intent = new Intent(this, EmailConfirmationActivity.class);
+        startActivity(intent);
+    }
+    public void onLoginClick(View view){
+        Intent intent = new Intent(this, LogIn.class);
+        startActivity(intent);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
