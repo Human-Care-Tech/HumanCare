@@ -1,17 +1,5 @@
 package com.gautam.medicinetime.Home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.amplifyframework.auth.AuthException;
-import com.amplifyframework.auth.result.AuthSignInResult;
-import com.amplifyframework.auth.result.AuthSignUpResult;
-import com.amplifyframework.core.Amplify;
-import com.amplifyframework.core.model.Model;
-import com.amplifyframework.datastore.DataStoreException;
-import com.amplifyframework.datastore.DataStoreItemChange;
-import com.amplifyframework.datastore.generated.model.User;
-import com.gautam.medicinetime.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.amplifyframework.core.Amplify;
+import com.gautam.medicinetime.R;
 
 public class EmailConfirmationActivity extends AppCompatActivity {
     Handler handler;
@@ -52,7 +44,7 @@ public class EmailConfirmationActivity extends AppCompatActivity {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete");
 
-                    Intent intent = new Intent(EmailConfirmationActivity.this, LogIn.class);
+                    Intent intent = new Intent(EmailConfirmationActivity.this, PatientInfoActivity.class);
                     startActivity(intent);
                 },
                 error -> {

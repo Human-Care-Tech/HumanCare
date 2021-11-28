@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button goToProfile = findViewById(R.id.profileBtn);
         goToProfile.setOnClickListener(view ->{
-            Intent intent= new Intent(this, PatientInfoActivity.class);
+            Intent intent= new Intent(this, PatientProfileActivity.class);
             startActivity(intent);
         });
 
