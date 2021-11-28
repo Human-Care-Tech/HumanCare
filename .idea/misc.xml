@@ -15,7 +15,19 @@
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/fragment_reminder.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_history.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_medicine.xml" value="0.36666666666666664" />
+
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_email_confirmation.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_join.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_log_in.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/STUDENT/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_sign_up.xml" value="0.1787037037037037" />
+
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/drawable-v21/ic_statistics.xml" value="1.1708333333333334" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/drawable/ic_arrow_right.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_add_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_appointment_adapter.xml" value="0.1953125" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_doctor_list.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_medicine.xml" value="0.16" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_monthly_report.xml" value="0.209375" />
@@ -25,8 +37,10 @@
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_history.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_medicine.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_reminder.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/list.xml" value="0.25" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_history.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_medicine.xml" value="0.209375" />
+
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/back_to_home_button.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/profile_back_button.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/profile_bk.xml" value="0.14479166666666668" />
@@ -37,6 +51,7 @@
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/activity_patient_info.xml" value="0.18" />
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/activity_patient_profile.xml" value="0.22" />
         <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/content_profile.xml" value="0.33" />
+
       </map>
     </option>
   </component>

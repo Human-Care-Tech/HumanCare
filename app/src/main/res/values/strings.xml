@@ -25,7 +25,7 @@
     <string name="no_ignored_history">Well Done</string>
     <string name="menu_stats">Monthly Report</string>
     <string name="title">Patient Info </string>
-    <string name="name">Full Name</string>
+    <string name="patientName">Full Name</string>
     <string name="weight">Weight</string>
     <string name="height">Height</string>
     <string name="age">Age</string>
@@ -35,4 +35,20 @@
 // PROFILE STRINGS
     <string name="title_activity_profile">Profile</string>
     <string name="action_settings">Settings</string>
+    <string name="sign_in" />
+    <string name="join_us" />
+    <string name="join">Join</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="joinus">JoinUs</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirmation_code">Confirmation Code</string>
+    <string name="confirm_your_email">Confirm Your Email</string>
+    <string name="please_log_in" />
+    <string name="username" />
+    <string name="register">Register</string>
+    <string name="the_code_is_wrong_try_again" />
+    <string name="enter_the_code_sent_to_your_email" />
+>>>>>>> da2d9cb19c5e74a42b0324e300998d23478af9f8
 </resources>

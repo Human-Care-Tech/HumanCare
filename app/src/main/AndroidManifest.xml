@@ -3,6 +3,8 @@
     package="com.gautam.medicinetime">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,12 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
         <activity
             android:name=".Home.PatientProfileActivity"
             android:exported="true" />
         <activity
             android:name=".Home.PatientInfoActivity"
             android:exported="true" />
+        <activity
+
+            android:name=".Home.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Home.LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Home.EmailConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.makeAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".Home.DoctorList"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Home.AppointmentAdapter" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".Home.Appointment_Activity"
+
+            android:exported="false" />
         <activity
             android:name=".Home.SplashActivity"
             android:exported="true">
