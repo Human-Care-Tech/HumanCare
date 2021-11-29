@@ -31,9 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="288dp"
         android:indeterminate="true"
-        android:src="@drawable/simone"
         android:background="@color/white"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -12,5 +12,22 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
-    <dimen name="headerTextSize">28sp</dimen>
+
+
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="headerTextSize">25sp</dimen>
+    <dimen name="newsMoreTextSize">12sp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_logo_icon_width">60dp</dimen>
+    <dimen name="app_logo_icon_height">60dp</dimen>
+    <dimen name="dash_board_icon_height">200dp</dimen>
+    <dimen name="default_font_size">15dp</dimen>
+
+
 </resources>

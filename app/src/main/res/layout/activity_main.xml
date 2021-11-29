@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="GoToMain"
-        android:text="DON'T PRESS"
+        android:text="button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintVertical_bias="0.288" />
 
     <Button
         android:id="@+id/profileBtn"
@@ -97,7 +97,7 @@
         android:text="doctorList"
         app:layout_constraintBottom_toTopOf="@+id/profileBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.67" />

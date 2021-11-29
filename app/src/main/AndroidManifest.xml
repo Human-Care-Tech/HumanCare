@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -13,7 +18,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".Home.AppointmentList"
+            android:exported="false" />
+        <activity
+            android:name=".Home.Maps"
+            android:exported="true" />
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".Home.DashboardActivity"
+            android:exported="true" />
         <activity
             android:name=".Home.PatientProfileActivity"
             android:exported="true" />
@@ -21,7 +39,6 @@
             android:name=".Home.PatientInfoActivity"
             android:exported="true" />
         <activity
-
             android:name=".Home.SignUp"
             android:exported="false" />
         <activity
@@ -30,8 +47,6 @@
         <activity
             android:name=".Home.EmailConfirmationActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".Home.makeAppointment"
             android:exported="false" />
@@ -42,7 +57,6 @@
         <!-- android:exported="false" /> -->
         <activity
             android:name=".Home.Appointment_Activity"
-
             android:exported="false" />
         <activity
             android:name=".Home.SplashActivity"

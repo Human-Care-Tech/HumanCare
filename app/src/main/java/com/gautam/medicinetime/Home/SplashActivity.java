@@ -40,12 +40,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(currentUser==null){
+
                     Intent i = new Intent(SplashActivity.this, LogIn.class);
                     startActivity(i);
                 }
                 else {
-
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    System.out.println(currentUser.getUsername()+"hlooooooooooooooooooooooooooooo");
+                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
                     startActivity(i);
                 }
 

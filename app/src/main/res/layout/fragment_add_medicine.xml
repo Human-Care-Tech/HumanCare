@@ -193,9 +193,9 @@
                         android:background="@drawable/drawable_underline"
                         android:gravity="center"
                         android:padding="@dimen/four_dp"
+                        android:textColor="#4d4d4d"
                         android:textSize="@dimen/text_large"
                         android:textStyle="bold"
-                        android:textColor="#4d4d4d"
                         tools:text="23:30" />
 
                     <EditText
