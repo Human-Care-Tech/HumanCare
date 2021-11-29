@@ -40,7 +40,7 @@ query GetDoctor($id: ID!) {
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -103,7 +103,7 @@ query SyncAppointments(
     items {
       id
       doctorId
-      user
+      patient
       doctor
       lat
       lon
@@ -124,7 +124,7 @@ query GetAppointment($id: ID!) {
   getAppointment(id: $id) {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon
@@ -147,7 +147,7 @@ query ListAppointments(
     items {
       id
       doctorId
-      user
+      patient
       doctor
       lat
       lon

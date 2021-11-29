@@ -9,7 +9,7 @@
     <drawable name="touchFeedback">#CFD8DC</drawable>
 
 // PROFILE COLORS
-    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profilePrimaryDark">#1976d2</color>
     <color name="profileAccentColor">#F7F7F7</color>
     <color name="whiteTextColor">#fff</color>
     <color name="profileBackground">#fff</color>
