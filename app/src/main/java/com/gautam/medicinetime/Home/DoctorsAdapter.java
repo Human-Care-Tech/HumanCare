@@ -1,13 +1,14 @@
 package com.gautam.medicinetime.Home;
 
 
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.graphics.fonts.Font;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHolder> {
-
 
 
     List<Doctor> allDoctor = new ArrayList<>();
@@ -47,7 +47,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         Doctor Doctor = allDoctor.get(position);
-        viewHolder.doctorName.setText(Doctor.getName());
+        viewHolder.doctorName.setText(" DR." + Doctor.getName());
         viewHolder.doctorSpeciality.setText(Doctor.getSpecialty());
         viewHolder.doctorLocation.setText(Doctor.getLocation());
 
@@ -59,15 +59,13 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
                 Toast.makeText(context, "Submitted!", Toast.LENGTH_SHORT).show();
                 String Task1 = viewHolder.doctorName.getText().toString();
                 editor.putString("DoctorName", Task1);
-                editor.putString("id",Doctor.getId());
+                editor.putString("id", Doctor.getId());
                 //TODO
 //                editor.putString("lat",Doctor.);
                 editor.apply();
                 Intent gotToStd = new Intent(context, makeAppointment.class);
                 context.startActivity(gotToStd);
             }
-
-
         });
 
     }
