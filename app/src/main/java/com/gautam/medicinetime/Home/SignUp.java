@@ -47,7 +47,7 @@ public class SignUp extends AppCompatActivity {
                 result ->
                 {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-                    Intent intent = new Intent(SignUp.this,EmailConfirmationActivity.class);
+                    Intent intent = new Intent(SignUp.this, PatientInfoActivity.class);
                     intent.putExtra("userName",result.getUser().getUsername());
                     SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
                     SharedPreferences.Editor editor = sharedPreferences.edit();

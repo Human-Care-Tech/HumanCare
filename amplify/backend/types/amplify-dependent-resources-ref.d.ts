@@ -15,5 +15,11 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientIDWeb": "string",
             "AppClientID": "string"
         }
+    },
+    "storage": {
+        "humancareS3": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }
