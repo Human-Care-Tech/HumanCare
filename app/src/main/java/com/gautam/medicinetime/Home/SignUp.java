@@ -17,16 +17,10 @@ import com.gautam.medicinetime.R;
 
 public class SignUp extends AppCompatActivity {
 
-    public void onClickJoin(View view){
-        Intent intent = new Intent(this, EmailConfirmationActivity.class);
-        startActivity(intent);
-    }
-    public void onLoginClick(View view){
-        Intent intent = new Intent(this, LogIn.class);
-        startActivity(intent);
-    }
-
-
+//    public void onClickJoin(View view){
+//        Intent intent = new Intent(this, EmailConfirmationActivity.class);
+//        startActivity(intent);
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +47,7 @@ public class SignUp extends AppCompatActivity {
                 result ->
                 {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-                    Intent intent = new Intent(SignUp.this,LogIn.class);
+                    Intent intent = new Intent(SignUp.this,EmailConfirmationActivity.class);
                     intent.putExtra("userName",result.getUser().getUsername());
                     SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -65,5 +59,9 @@ public class SignUp extends AppCompatActivity {
                 error -> Log.e("AuthQuickStart", "Sign up failed", error)
         );
 
+    }
+    public void OnSignUp(View view){
+        Intent intent = new Intent(this, LogIn.class);
+        startActivity(intent);
     }
 }

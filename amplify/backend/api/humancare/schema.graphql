@@ -10,7 +10,7 @@ type Doctor @model {
 type Appointment @model @key(name: "ByDoctor", fields: ["doctorId"]){
     id:ID!
     doctorId:ID!
-    patient:String!
+    user:String!
     doctor:String
     lat:Float
     lon:Float

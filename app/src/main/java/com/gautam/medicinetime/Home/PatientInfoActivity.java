@@ -60,6 +60,7 @@ public class PatientInfoActivity extends AppCompatActivity {
 
             SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
             String id=sharedPreferences.getString("username","");
+            System.out.println(id+"aloooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
             Patient patient = new Patient(id,fullName, age ,address ,phone, height,weight,gender);
 
             Long patientId = AppDatabase.getInstance(getApplicationContext()).userDao().insertUser(patient);
@@ -74,8 +75,6 @@ public class PatientInfoActivity extends AppCompatActivity {
 
 
 
-            Toast submitted = Toast.makeText(getApplicationContext(),"Successfully Saved!",Toast.LENGTH_SHORT);
-            submitted.show();
 
             Intent intent = new Intent(PatientInfoActivity.this, LogIn.class );
 //            editor.putString("name", fullName);

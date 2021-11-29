@@ -51,4 +51,4 @@ ext {
     junitVersion = '4.13'
 }
 
-apply plugin: 'com.amplifyframework.amplifytools'
+//apply plugin: 'com.amplifyframework.amplifytools'

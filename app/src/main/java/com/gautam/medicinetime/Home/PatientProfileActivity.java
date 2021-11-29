@@ -19,6 +19,7 @@ public class PatientProfileActivity extends AppCompatActivity {
 
 
         AuthUser user = Amplify.Auth.getCurrentUser();
+        System.out.println(user.getUsername()+"aloooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
         String id = user.getUsername();
 
 

@@ -124,7 +124,7 @@
                         android:textSize="17sp"
                         android:text="Already have an account?"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:onClick="onLoginClick"/>
+                        android:onClick="OnSignUp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
