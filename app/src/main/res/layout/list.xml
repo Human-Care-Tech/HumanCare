@@ -9,14 +9,13 @@
     app:cardElevation="8dp"
     app:cardMaxElevation="8dp"
     app:cardPreventCornerOverlap="true"
-
-    android:paddingBottom=""
+    app:cardUseCompatPadding="true"
 
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="385dp"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         >
 
         <ImageView
