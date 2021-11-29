@@ -20,7 +20,9 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".Home.AppointmentList"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Home.DashboardActivity"
+            />
         <activity
             android:name=".Home.Maps"
             android:exported="true" />
@@ -55,9 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".Home.DoctorList"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".Home.AppointmentAdapter" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
         <activity
             android:name=".Home.Appointment_Activity"
             android:exported="false" />

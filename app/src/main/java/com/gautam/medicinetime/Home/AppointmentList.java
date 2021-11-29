@@ -2,6 +2,7 @@ package com.gautam.medicinetime.Home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +30,11 @@ public class AppointmentList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_list);
+
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
+        setSupportActionBar(myToolbar);
+
 
         RecyclerView allTasksRecyclerView = findViewById(R.id.AppoRecyclerViewAbed);
         List<Appointment> appo = GetDataFromAppointment(allTasksRecyclerView);
