@@ -9,6 +9,21 @@
     <drawable name="touchFeedback">#CFD8DC</drawable>
 
 // PROFILE COLORS
+    <color name="profilePrimaryDark">#1976d2</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
+    <color name="colorAccent">#03a9f4</color>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#1976d2</color>
+
+    <color name="color_light_grey">#4d4d4d</color>
+    <color name="white">#CFD8DC</color>
+    <drawable name="touchFeedback">#CFD8DC</drawable>
+
+// PROFILE COLORS
     <color name="profilePrimaryDark">#FF3B30</color>
     <color name="profileAccentColor">#F7F7F7</color>
 
@@ -65,3 +80,4 @@
 
 
 </resources>
+

@@ -9,7 +9,7 @@ subscription OnCreateDoctor {
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -43,7 +43,7 @@ subscription OnUpdateDoctor {
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -77,7 +77,7 @@ subscription OnDeleteDoctor {
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -105,7 +105,7 @@ subscription OnCreateAppointment {
   onCreateAppointment {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon
@@ -124,7 +124,7 @@ subscription OnUpdateAppointment {
   onUpdateAppointment {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon
@@ -143,7 +143,7 @@ subscription OnDeleteAppointment {
   onDeleteAppointment {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon

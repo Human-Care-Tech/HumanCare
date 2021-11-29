@@ -57,12 +57,21 @@ android {
     android.variantFilter { variant ->
         if (variant.buildType.name == 'release'
                 && variant.getFlavors().get(0).name == 'mock') {
-            variant.setIgnore(true);
+            variant.setIgnore(true)
         }
     }
 }
 
 dependencies {
+
+
+    // room dependencies
+
+    def room_version = "2.3.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.guolindev.permissionx:permissionx:1.6.1'
@@ -72,6 +81,7 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.35.0'
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-analytics'
+
     implementation 'androidx.multidex:multidex:2.0.1'
 //    implementation 'com.amplifyframework:core:1.30.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')

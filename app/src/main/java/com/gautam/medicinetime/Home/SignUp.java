@@ -1,12 +1,14 @@
 package com.gautam.medicinetime.Home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
@@ -46,12 +48,18 @@ public class SignUp extends AppCompatActivity {
         AuthSignUpOptions options = AuthSignUpOptions.builder()
                 .userAttribute(AuthUserAttributeKey.email(), email)
                 .build();
+
         Amplify.Auth.signUp(userName, password, options,
                 result ->
                 {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
                     Intent intent = new Intent(SignUp.this,LogIn.class);
                     intent.putExtra("userName",result.getUser().getUsername());
+                    SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username",result.getUser().getUsername());
+//                    editor.putString("userEmail",email);
+                    editor.apply();
                     startActivity(intent);
                 },
                 error -> Log.e("AuthQuickStart", "Sign up failed", error)

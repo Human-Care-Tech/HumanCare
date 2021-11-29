@@ -15,6 +15,14 @@
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/fragment_reminder.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_history.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PREDATOR/Desktop/Porject/Medicine Reminder Android App Project/app/src/main/res/layout/row_medicine.xml" value="0.36666666666666664" />
+
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_add_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_medicine.xml" value="0.16" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_monthly_report.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/activity_reminder_actvity.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/component_day_view.xml" value="0.209375" />
+
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/drawable-hdpi/back_to_home_button.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/drawable-hdpi/ic_launcher_background.xml" value="0.22205128205128205" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/drawable-hdpi/profile_back_button.xml" value="0.22205128205128205" />
@@ -47,10 +55,28 @@
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/component_day_view.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/content_profile.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/customtoast_red.xml" value="0.209375" />
+
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_add_medicine.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_history.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_medicine.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/fragment_reminder.xml" value="0.209375" />
+
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_history.xml" value="0.209375" />
+        <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_medicine.xml" value="0.209375" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/back_to_home_button.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/profile_back_button.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-hdpi/profile_bk.xml" value="0.14479166666666668" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable-v21/ic_filter_list.xml" value="1.046875" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable/background_configure_alarm_button.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable/background_configure_medication.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable/background_day_view.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/drawable/background_status_medication.xml" value="0.2203125" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/activity_patient_info.xml" value="0.18" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/activity_patient_profile.xml" value="0.25" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/content_profile.xml" value="0.25" />
+        <entry key="..\:/Users/dc/asac/401/final_Project/HumanCare/app/src/main/res/layout/fragment_user.xml" value="0.1" />
+
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/list.xml" value="0.3200636942675159" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_history.xml" value="0.209375" />
         <entry key="..\:/Users/Student/Desktop/HumanCare/app/src/main/res/layout/row_medicine.xml" value="0.209375" />
@@ -71,6 +97,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_email_confirmation.xml" value="0.209375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_log_in.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HumanCare/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+
       </map>
     </option>
   </component>

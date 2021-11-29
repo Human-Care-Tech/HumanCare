@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,14 +15,13 @@ import com.gautam.medicinetime.R;
 
 public class PatientInfoActivity extends AppCompatActivity {
     String gender = " ";
+//    AuthUser user = Amplify.Auth.getCurrentUser();
+//    String id = user.getUserId();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_info);
 
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
         Button submit = findViewById(R.id.submit_info_form);
         submit.setOnClickListener(view -> {
 
@@ -37,13 +37,14 @@ public class PatientInfoActivity extends AppCompatActivity {
 
 
             EditText ageEditText = (EditText) findViewById(R.id.age);
-            String age = ageEditText.getText().toString();
+            String age =  ageEditText.getText().toString();
 
             EditText phoneEditText = (EditText) findViewById(R.id.Phone);
-            String phone = phoneEditText.getText().toString();
+            String phone =  phoneEditText.getText().toString();
 
             EditText addressEditText = (EditText) findViewById(R.id.address);
             String address = addressEditText.getText().toString();
+
 
             RadioButton maleBtn = findViewById(R.id.male);
             RadioButton femaleBtn = findViewById(R.id.female);
@@ -54,19 +55,44 @@ public class PatientInfoActivity extends AppCompatActivity {
             } else if (femaleBtn.isChecked()) {
                 gender = "Female";
             }
-            Intent intent = new Intent(PatientInfoActivity.this, LogIn.class );
-            editor.putString("name", fullName);
-            System.out.println(fullName+"NAMEEEEEEEEEEEEEEEEEEE");
-            editor.putString("age", age);
-            System.out.println(age +"AGEEEEEEEEEEEEEE");
-            editor.putString("phone", phone);
-            editor.putString("address", address);
-            editor.putString("weight", weight);
-            editor.putString("height", height);
-            editor.putString("gender", gender);
 
+            // store userInfo to database
+
+            SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+            String id=sharedPreferences.getString("username","");
+            Patient patient = new Patient(id,fullName, age ,address ,phone, height,weight,gender);
+
+            Long patientId = AppDatabase.getInstance(getApplicationContext()).userDao().insertUser(patient);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putLong("id", patientId);
             editor.apply();
+
+            System.out.println("*************************" + "User Id = "+ patientId+ "**************************");
+            System.out.println(patient.getAddress()+"INFOOOOOOOOOOOOOO");
+            System.out.println(patient.toString());
+
+
+
+            Toast submitted = Toast.makeText(getApplicationContext(),"Successfully Saved!",Toast.LENGTH_SHORT);
+            submitted.show();
+
+            Intent intent = new Intent(PatientInfoActivity.this, LogIn.class );
+//            editor.putString("name", fullName);
+//            System.out.println(fullName+"NAMEEEEEEEEEEEEEEEEEEE");
+//            editor.putString("age", age);
+//            System.out.println(age +"AGEEEEEEEEEEEEEE");
+//            editor.putString("phone", phone);
+//            editor.putString("address", address);
+//            editor.putString("weight", weight);
+//            editor.putString("height", height);
+//            editor.putString("gender", gender);
+//
+//            editor.apply();
             startActivity(intent);
         });
     }
+
+
+
 }
