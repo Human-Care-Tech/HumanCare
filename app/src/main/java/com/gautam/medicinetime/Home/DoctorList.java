@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Button;
 
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
@@ -36,7 +34,7 @@ public class DoctorList extends AppCompatActivity {
 
         Log.i("kafawen",docs.toString());
         allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        allTasksRecyclerView.setAdapter(new AppointmentAdapter(docs));
+        allTasksRecyclerView.setAdapter(new DoctorsAdapter(docs));
 
 
     }
