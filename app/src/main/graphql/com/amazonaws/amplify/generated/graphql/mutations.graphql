@@ -12,7 +12,7 @@ mutation CreateDoctor(
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -49,7 +49,7 @@ mutation UpdateDoctor(
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -86,7 +86,7 @@ mutation DeleteDoctor(
       items {
         id
         doctorId
-        user
+        patient
         doctor
         lat
         lon
@@ -117,7 +117,7 @@ mutation CreateAppointment(
   createAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon
@@ -139,7 +139,7 @@ mutation UpdateAppointment(
   updateAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon
@@ -161,7 +161,7 @@ mutation DeleteAppointment(
   deleteAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    user
+    patient
     doctor
     lat
     lon

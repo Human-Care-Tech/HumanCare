@@ -20,7 +20,7 @@ import com.gautam.medicinetime.R;
 /**
  * Created by Mohanraj.SK on 6/26/2016.
  */
-public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
+public class DashboardActivity extends AppCompatActivity implements View.OnClickListener  {
 
     LinearLayout previousAppointmentVw,scheduleAppointmentVw,trackKioskVW,profileVw;
     public static final String PREFS_NAME = "MediAuthUser";
@@ -52,8 +52,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case  R.id.previous_appointmet :
-//                Intent previousAppointmetIntent = new Intent(DashboardActivity.this, .class);
-//                startActivity(previousAppointmetIntent);
+                Intent previousAppointmetIntent = new Intent(DashboardActivity.this, AppointmentList.class);
+                startActivity(previousAppointmetIntent);
                 break;
 
             case  R.id.schedule_appointment :
