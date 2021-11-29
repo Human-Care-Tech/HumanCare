@@ -37,7 +37,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
     @NonNull
     @Override
     public AppointmentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_appointment_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.appolist, parent, false);
         return new AppointmentAdapter.ViewHolder(view);
     }
 

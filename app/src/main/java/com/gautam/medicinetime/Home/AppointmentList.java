@@ -31,21 +31,21 @@ public class AppointmentList extends AppCompatActivity {
         setContentView(R.layout.activity_appointment_list);
 
         RecyclerView allTasksRecyclerView = findViewById(R.id.AppoRecyclerViewAbed);
-//        List<Appointment> appo = ;
-//        System.out.println(appo.toString());
-//    for(Appointment x : appo){
-//        System.out.println("=====================================");
-//
-//        System.out.println(x.toString());
-//    }
+        List<Appointment> appo = GetDataFromAppointment(allTasksRecyclerView);
+        System.out.println(appo.toString());
+    for(Appointment x : appo){
+        System.out.println("=====================================");
 
-//        Log.i("kafawen",appo.toString());
+        System.out.println(x.toString());
+    }
+
+        Log.i("kafawen",appo.toString());
         allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        allTasksRecyclerView.setAdapter(new AppointmentAdapter(GetData2(allTasksRecyclerView)));
+        allTasksRecyclerView.setAdapter(new AppointmentAdapter(appo));
 
 
     }
-    private  List<Appointment> GetData2( RecyclerView allTaskDataRecyclerView ){
+    private  List<Appointment> GetDataFromAppointment( RecyclerView allTaskDataRecyclerView ){
         AuthUser currentUser= Amplify.Auth.getCurrentUser();
         String user = currentUser.getUsername();
         Handler handler = new Handler(Looper.myLooper(), new Handler.Callback() {

@@ -127,4 +127,5 @@
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:minWidth">250dp</item>
     </style>
+    <style name="DayNight" parent="Theme.AppCompat.DayNight" />
 </resources>

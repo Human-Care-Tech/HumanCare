@@ -20,7 +20,7 @@ import com.gautam.medicinetime.R;
 /**
  * Created by Mohanraj.SK on 6/26/2016.
  */
-public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
+public class DashboardActivity extends AppCompatActivity implements View.OnClickListener  {
 
     LinearLayout previousAppointmentVw,scheduleAppointmentVw,trackKioskVW,profileVw;
     public static final String PREFS_NAME = "MediAuthUser";
