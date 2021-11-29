@@ -18,8 +18,8 @@ android {
     buildToolsVersion '29.0.3'
     defaultConfig {
         applicationId "com.gautam.medicinetime"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion 19
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -73,7 +73,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.amplifyframework:core:1.30.0'
+//    implementation 'com.amplifyframework:core:1.30.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
@@ -99,6 +99,8 @@ dependencies {
 
 
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'br.com.simplepass:loading-button-android:1.14.0'
+
 
 
 

@@ -19,7 +19,14 @@ import com.amplifyframework.core.Amplify;
 public class LogIn extends AppCompatActivity {
 
     Handler handler;
-
+    public void onClickJoin(View view){
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
+    public void onLoginClick(View view){
+        Intent intent = new Intent(this, PatientProfileActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
