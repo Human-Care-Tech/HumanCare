@@ -47,7 +47,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         Doctor Doctor = allDoctor.get(position);
-        viewHolder.doctorName.setText(" DR." + Doctor.getName());
+        viewHolder.doctorName.setText(Doctor.getName());
         viewHolder.doctorSpeciality.setText(Doctor.getSpecialty());
         viewHolder.doctorLocation.setText(Doctor.getLocation());
 
@@ -56,7 +56,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Log.d("my Adapter", "Element " + viewHolder.getAdapterPosition() + " clicked");
-                Toast.makeText(context, "Submitted!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Submitted!", Toast.LENGTH_SHORT).show();
                 String Task1 = viewHolder.doctorName.getText().toString();
                 editor.putString("DoctorName", Task1);
                 editor.putString("id", Doctor.getId());

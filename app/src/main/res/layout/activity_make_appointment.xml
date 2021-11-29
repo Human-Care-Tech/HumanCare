@@ -1,119 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@drawable/output"
     tools:context=".Home.makeAppointment">
+
 
     <TextView
         android:id="@+id/dateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="279dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/bree_serif"
         android:text="Select Appointment date "
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/contentTextColor"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386" />
+        app:layout_constraintVertical_bias="0.286" />
 
     <Button
         android:id="@+id/dateButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get date"
+        android:layout_width="96dp"
+        android:layout_height="61dp"
+        android:alpha="0.9"
+        android:backgroundTint="@color/offwhite"
+        android:fontFamily="@font/bree_serif"
+        android:text="DATE"
+        android:textColor="@color/contentTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317"
+        app:layout_constraintVertical_bias="0.279"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/timeButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get time"
+        android:layout_width="96dp"
+        android:layout_height="61dp"
+        android:alpha="0.9"
+
+        android:backgroundTint="@color/offwhite"
+        android:fontFamily="@font/bree_serif"
+        android:text=" Time "
+        android:textColor="@color/contentTextColor"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/timeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Appointment Time"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="122dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:text="Patient Name : "
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119" />
 
     <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="279dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Select Appointment Time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/contentTextColor"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        app:layout_constraintVertical_bias="0.423" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="53dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="DR."
+        android:textColor="@color/contentTextColor"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
         android:id="@+id/textView6"
-        android:layout_width="397dp"
-        android:layout_height="29dp"
+        android:layout_width="398dp"
+        android:layout_height="44dp"
+        android:fontFamily="@font/bree_serif"
         android:gravity="center_horizontal"
         android:text="Appointment Details"
         android:textAlignment="center"
+        android:textColor="@color/contentTextColor"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="410dp"
-        android:layout_height="96dp"
+        android:layout_width="322dp"
+        android:layout_height="86dp"
+        android:alpha="0.9"
+        android:backgroundTint="@color/secondary_text"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.633">
+        app:layout_constraintVertical_bias="0.891">
 
 
         <RadioButton
             android:id="@+id/AT_Home"
-            android:layout_width="205dp"
-            android:layout_height="match_parent"
-            android:text="At Home"
+            android:layout_width="161dp"
+            android:layout_height="86dp"
+            android:backgroundTint="@color/secondary_text"
+            android:buttonTint="@color/secondary_text"
+            android:fontFamily="@font/bree_serif"
             android:onClick="GotoMap"
+            android:text="At Home"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
 
         <RadioButton
             android:id="@+id/At_Clinic"
-            android:layout_width="208dp"
-            android:layout_height="96dp"
-            android:text="At Clinic" />
+            android:layout_width="162dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bree_serif"
+            android:text="At Clinic"
+            android:textSize="20dp"
+
+
+            />
 
 
     </RadioGroup>
@@ -122,50 +164,68 @@
         android:id="@+id/saveAppointment"
         android:layout_width="144dp"
         android:layout_height="53dp"
+        android:alpha="0.9"
+        android:backgroundTint="@color/secondary_text"
+        android:fontFamily="@font/bree_serif"
         android:onClick="OnClickSaveAppointment"
         android:text="SAVE"
+        android:textColor="@color/contentTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.911" />
 
     <EditText
         android:id="@+id/Des"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="367dp"
+        android:layout_height="87dp"
         android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="ADD YOUR SYMPTOMS "
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textColor="@color/contentTextColor"
+        android:textColorHint="@color/accent"
         app:layout_constraintBottom_toTopOf="@+id/saveAppointment"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
 
     <TextView
         android:id="@+id/Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="32dp"
-        android:text="Symptoms"
-        app:layout_constraintBottom_toTopOf="@+id/saveAppointment"
+
+        android:fontFamily="@font/bree_serif"
+        android:text="Symptoms : "
+        android:textColor="@color/contentTextColor"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
 
     <TextView
         android:id="@+id/DoctorName"
-        android:layout_width="92dp"
-        android:layout_height="44dp"
+        android:layout_width="311dp"
+        android:layout_height="40dp"
+
+        android:fontFamily="@font/bree_serif"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        android:textColor="@color/contentTextColor"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
+        app:layout_constraintVertical_bias="0.069" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

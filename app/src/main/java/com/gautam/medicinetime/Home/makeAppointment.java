@@ -45,7 +45,9 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import butterknife.OnClick;
+
 import java.lang.*;
+
 public class makeAppointment extends AppCompatActivity {
 
 
@@ -72,8 +74,8 @@ public class makeAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_appointment);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        TextView DoctorName= findViewById(R.id.DoctorName);
-        DoctorName.setText(sharedPreferences.getString("DoctorName","Doctor"));
+        TextView DoctorName = findViewById(R.id.DoctorName);
+        DoctorName.setText(sharedPreferences.getString("DoctorName", "Doctor"));
         dateButton = findViewById(R.id.dateButton);
         timeButton = findViewById(R.id.timeButton);
         dateTextView = findViewById(R.id.dateTextView);
@@ -119,8 +121,6 @@ public class makeAppointment extends AppCompatActivity {
         datePickerDialog.show();
 
 
-
-
     }
 
     private void handleTimeButton() {
@@ -145,37 +145,39 @@ public class makeAppointment extends AppCompatActivity {
 
     }
 
-    public void OnClickSaveAppointment(View view){
+    public void OnClickSaveAppointment(View view) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        AuthUser currentUser= Amplify.Auth.getCurrentUser();
-        String DoctorName=sharedPreferences.getString("DoctorName","Doctor");
-        String id=sharedPreferences.getString("id","");
-        TextView Date= findViewById(R.id.dateTextView);
-        TextView Time= findViewById(R.id.timeTextView);
-        EditText Symptoms= findViewById(R.id.Des);
-        RadioButton AT_Home=findViewById(R.id.AT_Home);
-        RadioButton At_Clinic=findViewById(R.id.At_Clinic);
+        AuthUser currentUser = Amplify.Auth.getCurrentUser();
+        String DoctorName = sharedPreferences.getString("DoctorName", "Doctor");
+        String id = sharedPreferences.getString("id", "");
+        TextView Date = findViewById(R.id.dateTextView);
+        TextView Time = findViewById(R.id.timeTextView);
+        EditText Symptoms = findViewById(R.id.Des);
+        RadioButton AT_Home = findViewById(R.id.AT_Home);
+        RadioButton At_Clinic = findViewById(R.id.At_Clinic);
         getLastLocation();
-        Double lat=null ;
-        Double lon=null ;
-        if(AT_Home.isChecked()){
-         lat=(double)   sharedPreferences.getFloat("lat",0);
-          lon=(double)  sharedPreferences.getFloat("lon",0);
-        }
-        else if(At_Clinic.isChecked()){
+        Double lat = null;
+        Double lon = null;
+        if (AT_Home.isChecked()) {
+            lat = (double) sharedPreferences.getFloat("lat", 0);
+            lon = (double) sharedPreferences.getFloat("lon", 0);
+        } else if (At_Clinic.isChecked()) {
 
         }
         Appointment App = Appointment.builder().doctorId(id).user(currentUser.getUsername()).doctor(DoctorName).date(Date.getText().toString()).time(Time.getText().toString())
                 .symptoms(Symptoms.getText().toString()).status("Pending").lat(lat).lon(lon).build();
 
 
-        Amplify.API.mutate(ModelMutation.create(App), succuess-> {
+        Amplify.API.mutate(ModelMutation.create(App), succuess -> {
             Log.i(TAG, "Saved to DYNAMODB");
         }, error -> {
             Log.i(TAG, "error saving to DYNAMODB");
         });
+        Intent intent = new Intent(this, DashboardActivity.class);
+        startActivity(intent);
 
     }
+
     @SuppressLint("MissingPermission")
     private void getLastLocation() {
         if (checkPermissions()) {
@@ -192,7 +194,7 @@ public class makeAppointment extends AppCompatActivity {
                         } else {
                             latitude = location.getLatitude();
                             longitude = location.getLongitude();
-                            System.out.println(latitude+"kafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                            System.out.println(latitude + "kafaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                             Log.i(TAG, "LAT ====>: " + latitude);
                             Log.i(TAG, "LONG ====>: " + longitude);
                         }
@@ -255,9 +257,10 @@ public class makeAppointment extends AppCompatActivity {
         getLastLocation();
     }
 
-    public void GotoMap(View view){
-        Intent intent= new Intent(this,Maps.class);
+    public void GotoMap(View view) {
+        Intent intent = new Intent(this, Maps.class);
         startActivity(intent);
     }
+
 
 }

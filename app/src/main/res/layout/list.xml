@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/accent2"
-    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="30dp"
     app:cardElevation="8dp"
-    app:cardMaxElevation="10dp"
+    app:cardMaxElevation="8dp"
     app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true">
+
+    android:paddingBottom=""
+
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="385dp"
         android:layout_height="200dp"
-
-
         >
 
         <ImageView
@@ -32,15 +33,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.075"
-            app:srcCompat="@drawable/ic_arrow_right" />
+            app:srcCompat="@drawable/dummydoc" />
 
         <LinearLayout
             android:id="@+id/list_item"
-            android:layout_width="241dp"
-            android:layout_height="177dp"
+            android:layout_width="235dp"
+            android:layout_height="176dp"
             android:orientation="vertical"
 
-           app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/observation_image"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">

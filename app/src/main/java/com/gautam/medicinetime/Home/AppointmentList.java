@@ -58,6 +58,7 @@ public class AppointmentList extends AppCompatActivity {
         List<Appointment> foundAppo=new ArrayList<>();
         Amplify.API.query(
                 ModelQuery.list(Appointment.class,Appointment.USER.contains(user)),
+
                 response -> {
                     for (Appointment todo : response.getData()) {
                         foundAppo.add(todo);
