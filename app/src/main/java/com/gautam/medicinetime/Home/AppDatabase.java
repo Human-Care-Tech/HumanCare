@@ -9,7 +9,7 @@ import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-@Database(entities = {Patient.class} , version = 6)
+@Database(entities = {Patient.class} , version = 7)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract PatientDao userDao();
@@ -27,12 +27,5 @@ public abstract class AppDatabase extends RoomDatabase {
         return appDatabase;
     }
 
-    static final Migration MIGRATION_1_6 = new Migration(1, 6) {
-        @Override
-        public void migrate(SupportSQLiteDatabase database) {
-            database.execSQL("ALTER TABLE users "
-                    +"ADD COLUMN address TEXT");
 
-        }
-    };
 }
