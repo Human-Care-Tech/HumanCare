@@ -29,12 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button signOutButton = findViewById(R.id.signout);
         signOutButton.setOnClickListener(view -> {
-            Amplify.Auth.signOut(
-                    () -> Log.i("AuthQuickstart", "Signed out successfully"),
-                    error -> Log.e("AuthQuickstart", error.toString())
-            );
-            Intent intent = new Intent(this, LogIn.class);
-            startActivity(intent);
+
 
         });
 

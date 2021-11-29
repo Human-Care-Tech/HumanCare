@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.amplifyframework.core.Amplify;
 import com.gautam.medicinetime.R;
 
 
@@ -103,6 +105,15 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    public void SignOut(View view){
+        Amplify.Auth.signOut(
+                () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                error -> Log.e("AuthQuickstart", error.toString())
+        );
+        Intent intent = new Intent(this, LogIn.class);
         startActivity(intent);
     }
 

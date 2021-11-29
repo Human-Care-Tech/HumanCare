@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,10 +17,7 @@ import com.gautam.medicinetime.R;
 
 public class EmailConfirmationActivity extends AppCompatActivity {
     Handler handler;
-    public void onLoginClick(View view){
-        Intent intent = new Intent(this, LogIn.class);
-        startActivity(intent);
-    }
+
 
     public void onJoin(View view){
         Intent intent = new Intent(this, SignUp.class);
@@ -39,13 +37,10 @@ public class EmailConfirmationActivity extends AppCompatActivity {
 
 
 
-    public void verifyUser(View view) {
-
+    public void OnVerifived(View view) {
         String userName = getIntent().getStringExtra("userName");
         EditText confirmCodeView = findViewById(R.id.confirmCodeText);
         String code = confirmCodeView.getText().toString();
-
-
         Amplify.Auth.confirmSignUp(
                 userName,
                 code,

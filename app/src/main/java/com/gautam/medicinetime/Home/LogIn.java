@@ -23,10 +23,7 @@ public class LogIn extends AppCompatActivity {
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
     }
-    public void onLoginClick(View view){
-        Intent intent = new Intent(this, PatientProfileActivity.class);
-        startActivity(intent);
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,7 +48,7 @@ public class LogIn extends AppCompatActivity {
 
     }
 
-    public void userSignIn(View view) {
+    public void onLoginClick(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
         EditText userNameView = findViewById(R.id.usernameSignIn);
         String userName = userNameView.getText().toString();
@@ -64,18 +61,17 @@ public class LogIn extends AppCompatActivity {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignInComplete() ? "Sign in succeeded" : "Sign in not complete");
                     sharedPreferences.edit().putString("userInfo",userName).apply();
-                    Intent intent = new Intent(LogIn.this, MainActivity.class);
+                    Intent intent = new Intent(LogIn.this, DashboardActivity.class);
                     startActivity(intent);
                 },
                 error -> {
                     Log.e("AuthQuickstart", error.toString());
-                    handler.sendEmptyMessage(1);
+//                    handler.sendEmptyMessage(1);
+                    Toast toast= new Toast(this);
+                    Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show();
                 }
         );
     }
 
-    public void goToRegisterUser(View view){
-        Intent intent = new Intent(LogIn.this, SignUp.class);
-        startActivity(intent);
-    }
+
 }
