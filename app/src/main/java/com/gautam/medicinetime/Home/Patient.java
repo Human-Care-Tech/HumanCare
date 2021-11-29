@@ -18,6 +18,9 @@ public class Patient {
     @ColumnInfo(name ="patient_full_name")
     String fullName;
 
+    @ColumnInfo(name ="extension")
+    String extension;
+
     @ColumnInfo(name ="patient_age")
     String age;
 
@@ -48,6 +51,18 @@ public class Patient {
         this.weight = weight;
         this.gender = gender;
 
+    }
+
+    public Patient(@NonNull String id, String fullName, String extension, String age, String address, String phone, String height, String weight, String gender) {
+        this.id = id;
+        this.fullName = fullName;
+        this.extension = extension;
+        this.age = age;
+        this.address = address;
+        this.phone = phone;
+        this.height = height;
+        this.weight = weight;
+        this.gender = gender;
     }
 
     public Patient(String id, String fullName, String age, String address, String phone, String height, String weight, String gender) {
