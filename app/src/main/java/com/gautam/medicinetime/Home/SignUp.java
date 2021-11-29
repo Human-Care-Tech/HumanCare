@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
                 result ->
                 {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-                    Intent intent = new Intent(SignUp.this,EmailConfirmationActivity.class);
+                    Intent intent = new Intent(SignUp.this,LogIn.class);
                     intent.putExtra("userName",result.getUser().getUsername());
                     startActivity(intent);
                 },

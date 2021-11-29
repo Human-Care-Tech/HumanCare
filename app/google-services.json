@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774248440247",
+    "project_id": "humancare-d75e2",
+    "storage_bucket": "humancare-d75e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774248440247:android:ea460de8b6f47a1315c832",
+        "android_client_info": {
+          "package_name": "com.gautam.medicinetime.mock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774248440247-f7p4b42qtlq3vscr0sldkja49dco6rfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUEswtZ6KT-maRKS4-8Hy4ilcBU-rTuPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774248440247-f7p4b42qtlq3vscr0sldkja49dco6rfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
