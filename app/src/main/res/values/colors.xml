@@ -34,4 +34,34 @@
     <color name="light_font">#FBFBFB</color>
     <color name="text_shadow">#7F000000</color>
 
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#536DFE</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+
+    <color name="primary1">#03A9F4</color>
+    <color name="primary_dark1">#0288D1</color>
+    <color name="primary_light1">#B3E5FC</color>
+    <color name="accent1">#448AFF</color>
+    <color name="primary_text1">#212121</color>
+    <color name="secondary_text1">#757575</color>
+    <color name="icons1">#FFFFFF</color>
+    <color name="divider1">#BDBDBD</color>
+
+    <color name="primary2">#3F51B5</color>
+    <color name="primary_dark2">#303F9F</color>
+    <color name="primary_light2">#C5CAE9</color>
+    <color name="accent2">#448AFF</color>
+    <color name="primary_text2">#212121</color>
+    <color name="secondary_text2">#757575</color>
+    <color name="icons2">#FFFFFF</color>
+    <color name="divider2">#BDBDBD</color>
+
+
+
 </resources>

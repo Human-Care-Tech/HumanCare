@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".Home.AppointmentList"
+            android:exported="false" />
+        <activity
             android:name=".Home.Maps"
             android:exported="true" />
 
