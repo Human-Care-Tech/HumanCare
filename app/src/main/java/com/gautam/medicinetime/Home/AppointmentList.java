@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,91 +21,90 @@ import android.view.MenuItem;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.core.Amplify;
-import com.amplifyframework.core.model.Model;
 import com.amplifyframework.datastore.generated.model.Appointment;
-import com.amplifyframework.datastore.generated.model.Doctor;
 import com.gautam.medicinetime.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class AppointmentList extends AppCompatActivity {
 
+    private static final String TAG = "AppointmentList";
     SharedPreferences preferences;
-
-    List<Appointment> x= new ArrayList<>();
+    private List<Appointment> appointmentArrayList = new ArrayList<>();
+    private RecyclerView allTasksRecyclerView;
+    private AppointmentAdapter adapter;
+    private final Handler handler = new Handler(Objects.requireNonNull(Looper.myLooper()), new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message msg) {
+            Log.i(TAG, "Handler Called");
+            adapter.notifyDataSetChanged();
+            return false;
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_list);
 
-
-
-
-        RecyclerView allTasksRecyclerView = findViewById(R.id.AppoRecyclerViewAbed);
-        List<Appointment> appo = GetDataFromAppointment(allTasksRecyclerView);
-        Log.i("Finding Appointments", appo.toString());
-        allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        preferences = this.getSharedPreferences("my_pref", MODE_PRIVATE);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
-        getRecyclerView(appo);
 
+        allTasksRecyclerView = findViewById(R.id.AppoRecyclerViewAbed);
+        allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AppointmentAdapter(appointmentArrayList);
+        allTasksRecyclerView.setAdapter(adapter);
+        preferences = this.getSharedPreferences("my_pref", MODE_PRIVATE);
+        getDataFromAppointment();
+        sortListData();
     }
 
-    private void getRecyclerView(List<Appointment> foundAppo) {
-
-        String mSort = preferences.getString("Sort", "ascending");
+    private void sortListData() {
+        String mSort = preferences.getString("sort", "ascending");
         if (mSort.equals("ascending")) {
-            Collections.sort(foundAppo, Appointment.By_DATE_ASCENDING);
+            Collections.sort(appointmentArrayList, Appointment.By_DATE_ASCENDING);
         } else if (mSort.equals("descending")) {
-            Collections.sort(foundAppo, Appointment.By_DATE_DESCENDING);
+            Collections.sort(appointmentArrayList, Appointment.By_DATE_DESCENDING);
         }
-        RecyclerView x= findViewById(R.id.AppoRecyclerViewAbed);
-
-        Log.i("Finding Appointments", foundAppo.toString());
-        x.setLayoutManager(new LinearLayoutManager(this));
-        x.setAdapter(new AppointmentAdapter(foundAppo));
+        allTasksRecyclerView = findViewById(R.id.AppoRecyclerViewAbed);
+        allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AppointmentAdapter(appointmentArrayList);
+        allTasksRecyclerView.setAdapter(adapter);
+        Log.i("Finding Appointments", appointmentArrayList.toString());
+        adapter.notifyDataSetChanged();
     }
 
-    private List<Appointment> GetDataFromAppointment(RecyclerView allTaskDataRecyclerView) {
+    private List<Appointment> getDataFromAppointment() {
         AuthUser currentUser = Amplify.Auth.getCurrentUser();
         String user = currentUser.getUsername();
-        Handler handler = new Handler(Looper.myLooper(), new Handler.Callback() {
-            @Override
-            public boolean handleMessage(@NonNull Message msg) {
-                allTaskDataRecyclerView.getAdapter().notifyDataSetChanged();
-                return false;
-            }
-        });
-        List<Appointment> foundAppo=new ArrayList<>();
+
         Amplify.API.query(
                 ModelQuery.list(Appointment.class, Appointment.USER.contains(user)),
 
                 response -> {
+                    appointmentArrayList.clear(); // empties the array list
                     for (Appointment todo : response.getData()) {
-                        foundAppo.add(todo);
-                        foundAppo.toString();
-                        Log.i("MyAmplifyApp", foundAppo.toString());
+                        appointmentArrayList.add(todo);
+                        appointmentArrayList.toString();
+                        Log.i("MyAmplifyApp", appointmentArrayList.toString());
                         Log.i("MyAmplifyApp", "Successful query, found posts.");
                     }
-                    x=foundAppo;
+                    appointmentArrayList = appointmentArrayList;
                     handler.sendEmptyMessage(6);
                 },
                 error -> Log.e("MyAmplifyApp", "Query failure", error)
         );
 
-        return foundAppo;
+        return appointmentArrayList;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menusort, menu);
-
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -135,13 +133,13 @@ public class AppointmentList extends AppCompatActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("sort", "ascending");
                     editor.apply();
-                    getRecyclerView(x);
+                    sortListData();
                 }
                 if (i == 1) {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("sort", "descending");
                     editor.apply();
-                    getRecyclerView(x);
+                    sortListData();
                 }
             }
         });

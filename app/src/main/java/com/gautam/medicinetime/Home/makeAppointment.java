@@ -136,10 +136,10 @@ public class makeAppointment extends AppCompatActivity {
                 Calendar calendar1 = Calendar.getInstance();
                 calendar1.set(Calendar.HOUR, hour);
                 calendar1.set(Calendar.MINUTE, minute);
-                String dateText = DateFormat.format("h:mm a", calendar1).toString();
+                String dateText = DateFormat.format("HH:MM A", calendar1).toString();
                 timeTextView.setText(dateText);
             }
-        }, HOUR, MINUTE, false);
+        }, HOUR, MINUTE, is24HourFormat);
 
         timePickerDialog.show();
 
