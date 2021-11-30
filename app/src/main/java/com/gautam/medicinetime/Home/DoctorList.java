@@ -2,6 +2,9 @@ package com.gautam.medicinetime.Home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +13,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.SearchView;
 
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
@@ -17,28 +24,30 @@ import com.amplifyframework.datastore.generated.model.Doctor;
 import com.gautam.medicinetime.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DoctorList extends AppCompatActivity {
+
+    DoctorsAdapter doctorsAdapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_list);
 
-
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar4);
+        setSupportActionBar(myToolbar);
 
         RecyclerView allTasksRecyclerView = findViewById(R.id.recyclerview);
-        List<Doctor> docs = GetData(allTasksRecyclerView);
-
-
-        Log.i("kafawen",docs.toString());
+        ArrayList<Doctor> docs = GetData(allTasksRecyclerView);
+        Log.i("kafawen", docs.toString());
         allTasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        allTasksRecyclerView.setAdapter(new DoctorsAdapter(docs));
-
-
+        doctorsAdapter= new DoctorsAdapter(docs);
+        allTasksRecyclerView.setAdapter(doctorsAdapter);
     }
-    private  List<Doctor> GetData( RecyclerView allTaskDataRecyclerView ){
+
+
+
+    private ArrayList<Doctor> GetData(RecyclerView allTaskDataRecyclerView) {
         Handler handler = new Handler(Looper.myLooper(), new Handler.Callback() {
             @Override
             public boolean handleMessage(@NonNull Message msg) {
@@ -46,7 +55,7 @@ public class DoctorList extends AppCompatActivity {
                 return false;
             }
         });
-        List<Doctor> foundDoc=new ArrayList<>();
+        ArrayList<Doctor> foundDoc = new ArrayList<>();
         Amplify.API.query(
                 ModelQuery.list(Doctor.class),
                 response -> {
@@ -61,10 +70,39 @@ public class DoctorList extends AppCompatActivity {
                 error -> Log.e("MyAmplifyApp", "Query failure", error)
         );
 
-        return  foundDoc;
+        return foundDoc;
     }
-public void getData(){
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.search, menu);
+
+        MenuItem item = menu.findItem(R.id.searchmenu);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                doctorsAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                doctorsAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return true;
+    }
 
 
-}
 }

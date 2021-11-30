@@ -1,5 +1,4 @@
 type Doctor @model {
-
     id:ID!
     name:String!
     specialty:String!

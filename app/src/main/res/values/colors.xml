@@ -42,7 +42,7 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
 
-
+    <color name="offwhite">#f2f2d9</color>
     <color name="primary1">#03A9F4</color>
     <color name="primary_dark1">#0288D1</color>
     <color name="primary_light1">#B3E5FC</color>

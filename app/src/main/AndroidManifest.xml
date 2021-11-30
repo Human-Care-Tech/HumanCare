@@ -28,7 +28,9 @@
             android:exported="true" />
         <activity
             android:name=".Home.AppointmentList"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Home.DashboardActivity"
+            />
         <activity
             android:name=".Home.Maps"
             android:exported="true" />
@@ -36,6 +38,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name=".Home.DashboardActivity"
@@ -60,9 +65,7 @@
             android:exported="false" />
         <activity
             android:name=".Home.DoctorList"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".Home.AppointmentAdapter" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
         <activity
             android:name=".Home.Appointment_Activity"
             android:exported="false" />
