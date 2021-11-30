@@ -12,7 +12,7 @@ mutation CreateDoctor(
       items {
         id
         doctorId
-        patient
+        user
         doctor
         lat
         lon
@@ -49,7 +49,7 @@ mutation UpdateDoctor(
       items {
         id
         doctorId
-        patient
+        user
         doctor
         lat
         lon
@@ -86,7 +86,7 @@ mutation DeleteDoctor(
       items {
         id
         doctorId
-        patient
+        user
         doctor
         lat
         lon
@@ -117,7 +117,7 @@ mutation CreateAppointment(
   createAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    patient
+    user
     doctor
     lat
     lon
@@ -139,7 +139,7 @@ mutation UpdateAppointment(
   updateAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    patient
+    user
     doctor
     lat
     lon
@@ -161,7 +161,7 @@ mutation DeleteAppointment(
   deleteAppointment(input: $input, condition: $condition) {
     id
     doctorId
-    patient
+    user
     doctor
     lat
     lon
@@ -214,6 +214,69 @@ mutation DeleteUser(
     id
     name
     email
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreatePatient(
+  $input: CreatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  createPatient(input: $input, condition: $condition) {
+    id
+    fullName
+    age
+    address
+    phone
+    height
+    weight
+    gender
+    fileName
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdatePatient(
+  $input: UpdatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  updatePatient(input: $input, condition: $condition) {
+    id
+    fullName
+    age
+    address
+    phone
+    height
+    weight
+    gender
+    fileName
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeletePatient(
+  $input: DeletePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  deletePatient(input: $input, condition: $condition) {
+    id
+    fullName
+    age
+    address
+    phone
+    height
+    weight
+    gender
+    fileName
     _version
     _deleted
     _lastChangedAt
