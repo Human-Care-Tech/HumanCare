@@ -59,4 +59,10 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
 
+    <string name="home_text"></string>
+    <string name="profile_text"></string>
+    <string name="doctors_text"></string>
+    <string name="logout_text"></string>
+
+
 </resources>

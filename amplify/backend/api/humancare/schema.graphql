@@ -19,6 +19,7 @@ type Appointment @model @key(name: "ByDoctor", fields: ["doctorId"]){
     status:String
 
 }
+
 type User @model {
     id: ID!
     name: String

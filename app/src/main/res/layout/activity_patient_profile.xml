@@ -8,6 +8,8 @@
     tools:context=".Home.PatientProfileActivity"
     android:background="@color/profileBackground">
 
+
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -68,9 +70,11 @@
                         android:layout_alignParentTop="true"
                         android:background="@color/register_bk_color" />
 
+
 <!--                    <TextView-->
 <!--                        style="@style/profileStyledBackButton"-->
 <!--                        android:text="Back to\nHome" />-->
+
                 </RelativeLayout>
 
             </LinearLayout>
@@ -85,7 +89,9 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_profile" />
+    <include layout="@layout/content_profile"/>
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

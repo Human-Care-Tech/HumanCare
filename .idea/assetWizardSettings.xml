@@ -327,7 +327,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/local_hospital/baseline_local_hospital_24.xml" />
+
                                       <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/location_on/baseline_location_on_24.xml" />
+
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -337,7 +341,11 @@
                         </option>
                         <option name="values">
                           <map>
+
+                            <entry key="outputName" value="ic_doctors" />
+
                             <entry key="outputName" value="ic_location" />
+
                             <entry key="sourceFile" value="C:\Users\User\Downloads\8WUJ2XuE_400x400.svg" />
                           </map>
                         </option>

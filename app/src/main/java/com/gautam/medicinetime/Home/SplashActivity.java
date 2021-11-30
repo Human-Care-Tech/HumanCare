@@ -15,14 +15,18 @@ import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Doctor;
+
+
+
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
+
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG ="Splash";
 
-
+// hi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
