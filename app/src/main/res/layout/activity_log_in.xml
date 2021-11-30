@@ -60,7 +60,7 @@
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText
-                    android:id="@+id/usernameSignIn"
+                    android:id="@+id/doctorUsername"
                     style="@style/modifiedEditText"
                     android:hint="User Name"
                     android:textSize="17dp"
@@ -75,7 +75,7 @@
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText
-                    android:id="@+id/passwordSignin"
+                    android:id="@+id/doctorPassword"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_password_hint"
                     android:textSize="17dp"
@@ -93,7 +93,7 @@
                 android:textSize="@dimen/newsMoreTextSize" />
 
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-                android:id="@+id/cirLoginButton"
+                android:id="@+id/doctorLoginBtn"
                 style="@style/loginButton"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
