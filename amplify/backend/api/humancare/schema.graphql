@@ -24,3 +24,15 @@ type User @model {
     name: String
     email: String
 }
+
+type Patient @model {
+    id: ID!
+    fullName: String!
+    age: String
+    address: String
+    phone: String
+    height: String
+    weight: String
+    gender: String
+    fileName: String
+}
