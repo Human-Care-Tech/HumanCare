@@ -9,23 +9,15 @@
     android:id="@+id/body_container"
     tools:context=".Home.DashboardActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="15dp">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textStyle="bold"
-            android:textColor="@color/light_font"
-            android:shadowColor="@color/text_shadow"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="5" />
-    </LinearLayout>
+    <!--    </LinearLayout>-->
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,7 +25,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,6 +76,21 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:layout_width="285dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
+                    android:text="Dashboard"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,12 +99,21 @@
                     android:weightSum="2">
 
                     <LinearLayout
-                        android:id="@+id/track_kiosk"
+                        android:id="@+id/medicine_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:orientation="vertical" />
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dash_board_icon_height"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/track_logo" />
+
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/profile_vw"
@@ -119,10 +136,7 @@
 
 
             </LinearLayout>
-
         </ScrollView>
-
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
@@ -139,8 +153,6 @@
             app:itemRippleColor="@android:color/transparent"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/navigation" />
-
-
     </RelativeLayout>
 
 </LinearLayout>
