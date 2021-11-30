@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.DoctorList"
+
+    android:id="@+id/body_container"
+
+    tools:context=".Home.DoctorList">
+
     android:background="@drawable/vvxx"
     >
     <androidx.recyclerview.widget.RecyclerView
@@ -33,5 +37,36 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
+<!--<<<<<<< HEAD-->
+<!--=======-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerview"-->
+<!--        android:layout_width="414dp"-->
+<!--        android:layout_height="561dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--&gt;>>>>>> f2e264408ff6eb807d781113e53423e409b81d8d-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:background="@drawable/round_corner"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerview"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

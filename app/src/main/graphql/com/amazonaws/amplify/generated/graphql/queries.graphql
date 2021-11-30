@@ -40,7 +40,7 @@ query GetDoctor($id: ID!) {
       items {
         id
         doctorId
-        patient
+        user
         doctor
         lat
         lon
@@ -104,7 +104,7 @@ query SyncAppointments(
     items {
       id
       doctorId
-      patient
+      user
       doctor
       lat
       lon
@@ -126,7 +126,7 @@ query GetAppointment($id: ID!) {
   getAppointment(id: $id) {
     id
     doctorId
-    patient
+    user
     doctor
     lat
     lon
@@ -150,7 +150,7 @@ query ListAppointments(
     items {
       id
       doctorId
-      patient
+      user
       doctor
       lat
       lon
@@ -216,6 +216,82 @@ query ListUsers(
       id
       name
       email
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncPatients(
+  $filter: ModelPatientFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncPatients(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      fullName
+      age
+      address
+      phone
+      height
+      weight
+      gender
+      fileName
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetPatient($id: ID!) {
+  getPatient(id: $id) {
+    id
+    fullName
+    age
+    address
+    phone
+    height
+    weight
+    gender
+    fileName
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListPatients(
+  $filter: ModelPatientFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPatients(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      fullName
+      age
+      address
+      phone
+      height
+      weight
+      gender
+      fileName
       _version
       _deleted
       _lastChangedAt

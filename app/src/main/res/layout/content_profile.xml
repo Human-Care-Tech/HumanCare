@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/nameImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_name" />
+                app:srcCompat="@drawable/ic_user_name" />
 
             <TextView
                 android:id="@+id/nameTextView"
@@ -45,10 +45,11 @@
 
         <View style="@style/proifleDetailsView" />
         <RelativeLayout style="@style/profileDetailsLayout">
+
             <ImageView
                 android:id="@+id/genderImgView"
-                android:src="@drawable/ic_dob"
-                style="@style/profileDetailsImage" />
+                style="@style/profileDetailsImage"
+                app:srcCompat="@drawable/ic_gender" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
@@ -69,7 +70,7 @@
             <ImageView
                 android:id="@+id/ageImgView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_email" />
+                app:srcCompat="@drawable/ic_age" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
@@ -86,10 +87,11 @@
 
         <View style="@style/proifleDetailsView" />
         <RelativeLayout style="@style/profileDetailsLayout">
+
             <ImageView
                 android:id="@+id/dobImageView"
-                android:src="@drawable/ic_dob"
-                style="@style/profileDetailsImage" />
+                style="@style/profileDetailsImage"
+                app:srcCompat="@drawable/human_height" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
@@ -111,7 +113,7 @@
             <ImageView
                 android:id="@+id/mobileImageView"
                 style="@style/profileDetailsImage"
-                android:src="@drawable/ic_mobile" />
+                app:srcCompat="@drawable/ic_phone" />
 
             <TextView
                 style="@style/profileDetailsTextMain"
@@ -132,7 +134,7 @@
         <RelativeLayout style="@style/profileDetailsLayout">
             <ImageView
                 android:id="@+id/addressImageView"
-                android:src="@drawable/ic_address"
+                app:srcCompat="@drawable/ic_location"
                 style="@style/profileDetailsImage" />
 
             <TextView

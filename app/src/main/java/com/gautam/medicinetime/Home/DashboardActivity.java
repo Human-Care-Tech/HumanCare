@@ -1,5 +1,6 @@
 package com.gautam.medicinetime.Home;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,17 +13,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.amplifyframework.core.Amplify;
 import com.gautam.medicinetime.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 /**
  * Created by Mohanraj.SK on 6/26/2016.
  */
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener  {
+
+    BottomNavigationView navigationView;
+
 
     LinearLayout previousAppointmentVw,scheduleAppointmentVw,trackKioskVW,profileVw;
     public static final String PREFS_NAME = "MediAuthUser";
@@ -34,6 +41,48 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 //        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 //        getSupportActionBar().setCustomView(R.layout.toolbar);
         initializeAll();
+
+        navigationView = findViewById(R.id.bottom_navigation);
+        getSupportFragmentManager().beginTransaction().replace(R.id.body_container, new HomeFragment()).commit();
+        navigationView.setSelectedItemId(R.id.nav_home);
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch (item.getItemId()){
+
+                    case R.id.nav_home:
+                        fragment = new HomeFragment();
+                        Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+                        startActivity(i);
+
+                        break;
+
+                    case R.id.nav_doctors:
+                        fragment = new DoctorFragment();
+                        Intent intent = new Intent(getApplicationContext(), DoctorList.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.nav_profile:
+                        fragment = new ProfileFragment();
+                        Intent profile = new Intent(getApplicationContext(), PatientProfileActivity.class);
+                        startActivity(profile);
+                        break;
+
+                    case R.id.nav_logout:
+                        fragment = new LogoutFragment();
+                        Intent logout = new Intent(getApplicationContext(), PatientProfileActivity.class);
+                        startActivity(logout);
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
+
+                return true;
+            }
+        });
+
 
     }
     public void initializeAll(){
@@ -59,8 +108,13 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case  R.id.schedule_appointment :
-                Intent scheduleAppointmentIntent = new Intent(DashboardActivity.this, DoctorList.class);
+                Amplify.Auth.signOut(
+                        () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                        error -> Log.e("AuthQuickstart", error.toString())
+                );
+                Intent scheduleAppointmentIntent = new Intent(DashboardActivity.this, LogIn.class);
                 startActivity(scheduleAppointmentIntent);
+
                 break;
 
         }
@@ -108,13 +162,13 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         startActivity(intent);
     }
 
-    public void SignOut(View view){
-        Amplify.Auth.signOut(
-                () -> Log.i("AuthQuickstart", "Signed out successfully"),
-                error -> Log.e("AuthQuickstart", error.toString())
-        );
-        Intent intent = new Intent(this, LogIn.class);
-        startActivity(intent);
-    }
+//    public void SignOut(View view){
+//        Amplify.Auth.signOut(
+//                () -> Log.i("AuthQuickstart", "Signed out successfully"),
+//                error -> Log.e("AuthQuickstart", error.toString())
+//        );
+//        Intent intent = new Intent(this, LogIn.class);
+//        startActivity(intent);
+//    }
 
 }
