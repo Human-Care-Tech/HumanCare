@@ -2,7 +2,6 @@ package com.amplifyframework.datastore.generated.model;
 
 import com.amplifyframework.core.model.temporal.Temporal;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 import java.util.Objects;
@@ -14,7 +13,6 @@ import com.amplifyframework.core.model.annotations.Index;
 import com.amplifyframework.core.model.annotations.ModelConfig;
 import com.amplifyframework.core.model.annotations.ModelField;
 import com.amplifyframework.core.model.query.predicate.QueryField;
-import com.gautam.medicinetime.Home.AppointmentList;
 
 import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 
@@ -384,18 +382,5 @@ public final class Appointment implements Model {
       return (CopyOfBuilder) super.status(status);
     }
   }
-    public static final Comparator<Appointment> By_DATE_ASCENDING = new Comparator<Appointment>() {
-        @Override
-        public int compare(Appointment appointment, Appointment t1) {
-
-            return appointment.getDate().compareTo(t1.getDate());
-        }
-    };
-    public static final Comparator<Appointment> By_DATE_DESCENDING= new Comparator<Appointment>() {
-        @Override
-        public int compare(Appointment appointment, Appointment t1) {
-
-            return t1.getDate().compareTo(appointment.getDate());
-        }
-    };
+  
 }
