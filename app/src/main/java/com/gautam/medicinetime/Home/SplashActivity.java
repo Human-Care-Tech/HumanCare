@@ -15,6 +15,7 @@ import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Doctor;
+import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.gautam.medicinetime.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -61,7 +62,7 @@ public class SplashActivity extends AppCompatActivity {
             Amplify.addPlugin(new AWSDataStorePlugin());
             Amplify.addPlugin(new AWSApiPlugin());
             Amplify.addPlugin(new AWSCognitoAuthPlugin());
-//            Amplify.addPlugin(new AWSS3StoragePlugin());
+            Amplify.addPlugin(new AWSS3StoragePlugin());
 //            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin(getApplication()));
             Amplify.configure(getApplicationContext());
 

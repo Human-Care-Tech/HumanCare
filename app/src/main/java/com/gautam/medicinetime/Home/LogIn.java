@@ -1,7 +1,5 @@
 package com.gautam.medicinetime.Home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,10 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.gautam.medicinetime.R;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amplifyframework.core.Amplify;
+import com.gautam.medicinetime.R;
 
 public class LogIn extends AppCompatActivity {
 
@@ -61,7 +60,7 @@ public class LogIn extends AppCompatActivity {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignInComplete() ? "Sign in succeeded" : "Sign in not complete");
                     sharedPreferences.edit().putString("userInfo",userName).apply();
-                    Intent intent = new Intent(LogIn.this, DashboardActivity.class);
+                    Intent intent = new Intent(LogIn.this,DashboardActivity.class);
                     startActivity(intent);
                 },
                 error -> {
