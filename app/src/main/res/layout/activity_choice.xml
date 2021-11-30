@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Home.ChoiceActivity"
+        android:gravity="center"
+        android:background="@drawable/background"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#9E121212"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="289dp"
+                android:layout_height="423dp"
+                android:background="@drawable/floating_plate"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="40dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cutive"
+                    android:gravity="center"
+                    android:text="You are "
+                    android:textColor="@color/mainTextColor"
+                    android:textSize="25sp"
+                    android:textStyle="italic" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/doctorChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/custom_round_main_btn"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="Doctor"
+                    android:textColor="@color/innerColor">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/patientChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/custom_round_main_btn"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="Patient"
+                    android:textColor="@color/innerColor">
+
+                </androidx.appcompat.widget.AppCompatButton>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+

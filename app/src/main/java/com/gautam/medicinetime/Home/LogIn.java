@@ -49,9 +49,9 @@ public class LogIn extends AppCompatActivity {
 
     public void onLoginClick(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
-        EditText userNameView = findViewById(R.id.usernameSignIn);
+        EditText userNameView = findViewById(R.id.doctorUsername);
         String userName = userNameView.getText().toString();
-        EditText passwordView = findViewById(R.id.passwordSignin);
+        EditText passwordView = findViewById(R.id.doctorPassword);
         String password = passwordView.getText().toString();
 
         Amplify.Auth.signIn(
