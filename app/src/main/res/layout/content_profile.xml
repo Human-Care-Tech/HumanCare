@@ -18,8 +18,8 @@
 
         <TextView
             style="@style/headerText"
-            android:text="Account Info"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:text="Profile Info" />
 
         <View style="@style/proifleDetailsView" />
         <RelativeLayout style="@style/profileDetailsLayout">

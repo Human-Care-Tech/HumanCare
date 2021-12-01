@@ -71,9 +71,11 @@
                         android:background="@color/register_bk_color" />
 
 
-<!--                    <TextView-->
-<!--                        style="@style/profileStyledBackButton"-->
-<!--                        android:text="Back to\nHome" />-->
+                    <TextView
+                        android:id="@+id/profile_back_btn"
+                        style="@style/profileStyledBackButton"
+                        android:text="     Back to Home"
+                       android:textSize="20dp"/>
 
                 </RelativeLayout>
 

@@ -391,7 +391,6 @@ public final class Appointment implements Model {
         }
     };
 
-
     public static final Comparator<Appointment> By_DATE_DESCENDING = new Comparator<Appointment>() {
         @Override
         public int compare(Appointment o1, Appointment o2) {

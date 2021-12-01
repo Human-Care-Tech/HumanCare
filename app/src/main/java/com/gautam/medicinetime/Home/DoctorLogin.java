@@ -37,7 +37,6 @@ public class DoctorLogin extends AppCompatActivity {
 
             if(!userNameDoctor.contains("dr_")){
                 Toast toast = Toast.makeText(getApplicationContext(), "You are not allowed to sign in", Toast.LENGTH_LONG);
-
                 toast.show();
                 return;
             }

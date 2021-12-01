@@ -37,21 +37,20 @@
 
     <Button
         android:id="@+id/doctorSignOut"
-        android:layout_width="221dp"
+        android:layout_width="114dp"
         android:layout_height="51dp"
+        android:layout_marginLeft="150sp"
+        android:layout_marginBottom="170sp"
         android:background="@color/colorPrimary"
-
         android:text="Sign Out"
         android:textColor="@color/white"
-
         android:textSize="15dp"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView7"
@@ -85,17 +84,17 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
-        android:layout_width="fill_parent"
-        android:layout_height="72dp"
-        android:layout_marginBottom="660dp"
+        android:layout_width="413dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="656dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:title="Doctor Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="Doctor Profile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

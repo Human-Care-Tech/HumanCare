@@ -81,7 +81,7 @@ public class DoctorList extends AppCompatActivity {
                                 () -> Log.i("AuthQuickstart", "Signed out successfully"),
                                 error -> Log.e("AuthQuickstart", error.toString())
                         );
-                        Intent logout = new Intent(getApplicationContext(), LogIn.class);
+                        Intent logout = new Intent(getApplicationContext(), ChoiceActivity.class);
                         startActivity(logout);
                         break;
                 }
