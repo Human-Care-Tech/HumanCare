@@ -77,7 +77,11 @@ public class DoctorList extends AppCompatActivity {
 
                     case R.id.nav_logout:
                         fragment = new LogoutFragment();
-                        Intent logout = new Intent(getApplicationContext(), PatientProfileActivity.class);
+                        Amplify.Auth.signOut(
+                                () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                                error -> Log.e("AuthQuickstart", error.toString())
+                        );
+                        Intent logout = new Intent(getApplicationContext(), LogIn.class);
                         startActivity(logout);
                         break;
                 }

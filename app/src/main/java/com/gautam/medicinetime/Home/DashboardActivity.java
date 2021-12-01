@@ -20,6 +20,8 @@ import androidx.fragment.app.Fragment;
 
 import com.amplifyframework.core.Amplify;
 import com.gautam.medicinetime.R;
+import com.gautam.medicinetime.drugs.MedicineApp;
+import com.gautam.medicinetime.drugs.medicine.MedicineActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -31,7 +33,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     BottomNavigationView navigationView;
 
 
-    LinearLayout previousAppointmentVw,scheduleAppointmentVw,trackKioskVW,profileVw;
+    LinearLayout previousAppointmentVw,scheduleAppointmentVw,medicineTime,profileVw;
     public static final String PREFS_NAME = "MediAuthUser";
     Utils utilsObj = new Utils();
     @Override
@@ -73,7 +75,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
                     case R.id.nav_logout:
                         fragment = new LogoutFragment();
-                        Intent logout = new Intent(getApplicationContext(), PatientProfileActivity.class);
+                        Amplify.Auth.signOut(
+                                () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                                error -> Log.e("AuthQuickstart", error.toString())
+                        );
+                        Intent logout = new Intent(getApplicationContext(), LogIn.class);
                         startActivity(logout);
                         break;
                 }
@@ -89,9 +95,12 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         previousAppointmentVw = (LinearLayout)findViewById(R.id.previous_appointmet);
         scheduleAppointmentVw = (LinearLayout)findViewById(R.id.schedule_appointment);
         profileVw = (LinearLayout)findViewById(R.id.profile_vw);
+        medicineTime=findViewById(R.id.medicine_time);
         previousAppointmentVw.setOnClickListener(this);
         scheduleAppointmentVw.setOnClickListener(this);
         profileVw.setOnClickListener(this);
+        medicineTime.setOnClickListener(this);
+
 
     }
 
@@ -108,13 +117,15 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case  R.id.schedule_appointment :
-                Amplify.Auth.signOut(
-                        () -> Log.i("AuthQuickstart", "Signed out successfully"),
-                        error -> Log.e("AuthQuickstart", error.toString())
-                );
-                Intent scheduleAppointmentIntent = new Intent(DashboardActivity.this, LogIn.class);
+
+                Intent scheduleAppointmentIntent = new Intent(DashboardActivity.this, DoctorList.class);
                 startActivity(scheduleAppointmentIntent);
 
+                break;
+
+            case R.id.medicine_time:
+                Intent intent2 = new Intent(DashboardActivity.this, MedicineActivity.class);
+                startActivity(intent2);
                 break;
 
         }
