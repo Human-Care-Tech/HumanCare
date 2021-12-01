@@ -44,6 +44,7 @@ public class DoctorProfileAdapter extends RecyclerView.Adapter<DoctorProfileAdap
         viewHolder.patientName.setText(appointment.getUser());
         viewHolder.patientAvailableDate.setText(appointment.getDate());
         viewHolder.patientAvailableTime.setText(appointment.getTime());
+        viewHolder.patientSymptoms.setText(appointment.getSymptoms());
 
     }
 
@@ -58,6 +59,7 @@ public class DoctorProfileAdapter extends RecyclerView.Adapter<DoctorProfileAdap
         public TextView patientName;
         public TextView patientAvailableDate;
         public TextView patientAvailableTime;
+        public TextView patientSymptoms;
         public LinearLayout doctorFrame;
 
         public ViewHolder(@NonNull View itemView) {
@@ -65,6 +67,7 @@ public class DoctorProfileAdapter extends RecyclerView.Adapter<DoctorProfileAdap
             patientName = (TextView) itemView.findViewById(R.id.patientNameDoctor);
             patientAvailableDate = (TextView) itemView.findViewById(R.id.datePatientDoctor);
             patientAvailableTime = (TextView) itemView.findViewById(R.id.timePatientDoctor);
+            patientSymptoms = (TextView) itemView.findViewById(R.id.patientSymptoms);
             doctorFrame = (LinearLayout) itemView.findViewById(R.id.doctorFrame);
 
         }
