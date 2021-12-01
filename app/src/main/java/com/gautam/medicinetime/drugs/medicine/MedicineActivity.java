@@ -2,6 +2,8 @@ package com.gautam.medicinetime.drugs.medicine;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.gautam.medicinetime.Home.DashboardActivity;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -115,6 +117,14 @@ public class MedicineActivity extends AppCompatActivity {
 
         //Create MedicinePresenter
         presenter = new MedicinePresenter(Injection.provideMedicineRepository(MedicineActivity.this), medicineFragment);
+
+        FloatingActionButton alarmBackBtn = findViewById(R.id.alarm_back_btn);
+
+        alarmBackBtn.setOnClickListener(view -> {
+            Intent alarmBackIntent = new Intent(this, DashboardActivity.class);
+            startActivity(alarmBackIntent);
+        });
+
     }
 
     @Override
