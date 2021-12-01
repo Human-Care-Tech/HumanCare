@@ -60,7 +60,7 @@ public class makeAppointment extends AppCompatActivity {
     Button dateButton, timeButton;
     TextView dateTextView, timeTextView;
     private static final int REQUEST_PERMISSION = 123;
-
+    String location = "";
     private final LocationCallback mLocationCallback = new LocationCallback() {
         @Override
         public void onLocationResult(LocationResult locationResult) {
@@ -80,6 +80,8 @@ public class makeAppointment extends AppCompatActivity {
         timeButton = findViewById(R.id.timeButton);
         dateTextView = findViewById(R.id.dateTextView);
         timeTextView = findViewById(R.id.timeTextView);
+
+
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,9 +163,18 @@ public class makeAppointment extends AppCompatActivity {
         if (AT_Home.isChecked()) {
             lat = (double) sharedPreferences.getFloat("lat", 0);
             lon = (double) sharedPreferences.getFloat("lon", 0);
+            location = "At Home";
         } else if (At_Clinic.isChecked()) {
-
+            location = "At Clinic";
         }
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("location", location);
+        editor.apply();
+
+
+
+
         Appointment App = Appointment.builder().doctorId(id).user(currentUser.getUsername()).doctor(DoctorName).date(Date.getText().toString()).time(Time.getText().toString())
                 .symptoms(Symptoms.getText().toString()).status("Pending").lat(lat).lon(lon).build();
 
