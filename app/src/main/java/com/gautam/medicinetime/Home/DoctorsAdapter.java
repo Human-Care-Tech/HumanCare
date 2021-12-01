@@ -85,6 +85,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
             doctorName = (TextView) itemView.findViewById(R.id.doctorName);
             doctorSpeciality = (TextView) itemView.findViewById(R.id.doctorSpeciality);
             doctorLocation = (TextView) itemView.findViewById(R.id.doctorLocation);
+            doctorLocation = (TextView) itemView.findViewById(R.id.doctorLocation);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.list_item);
 
         }
