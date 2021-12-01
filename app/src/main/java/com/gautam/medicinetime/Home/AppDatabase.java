@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities = {Patient.class} , version = 9)
+@Database(entities = {Patient.class} , version = 10)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract PatientDao userDao();

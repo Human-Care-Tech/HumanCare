@@ -1,5 +1,6 @@
 package com.gautam.medicinetime.Home;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -34,6 +35,13 @@ public class DoctorLogin extends AppCompatActivity {
             EditText doctorPassword = findViewById(R.id.doctorPassword);
             String passwordDoctor = doctorPassword.getText().toString();
 
+            if(!userNameDoctor.contains("dr_")){
+                Toast toast = Toast.makeText(getApplicationContext(), "You are not allowed to sign in", Toast.LENGTH_LONG);
+
+                toast.show();
+                return;
+            }
+
             Amplify.Auth.signIn(
                     userNameDoctor,
                     passwordDoctor,
@@ -50,10 +58,18 @@ public class DoctorLogin extends AppCompatActivity {
                         Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show();
                     }
             );
-
         });
 
 
+//        Button stopButton = findViewById(R.id.admin);
+//        stopButton.setVisibility(View.GONE);
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+//        String email1 = sharedPreferences.getString("email", "Your email");
+//        if (email1.equals("aboud.coding@gmail.com")){
+//            stopButton.setVisibility(View.VISIBLE);
+//        }else{
+//
+//        }
 
 
         Toast toast = Toast.makeText(getApplicationContext(), "User Not Found", Toast.LENGTH_LONG);
@@ -69,7 +85,5 @@ public class DoctorLogin extends AppCompatActivity {
         super.onStart();
 
     }
-
-
 
 }

@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +25,7 @@ import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Appointment;
 import com.gautam.medicinetime.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +33,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class AppointmentList extends AppCompatActivity {
-
+    BottomNavigationView navigationView;
     private static final String TAG = "AppointmentList";
     SharedPreferences preferences;
     private List<Appointment> appointmentArrayList = new ArrayList<>();
@@ -50,6 +53,50 @@ public class AppointmentList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_list);
 
+        navigationView = findViewById(R.id.bottom_navigation);
+        getSupportFragmentManager().beginTransaction().replace(R.id.body_container, new HomeFragment()).commit();
+        navigationView.setSelectedItemId(R.id.nav_home);
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch (item.getItemId()){
+
+                    case R.id.nav_home:
+                        fragment = new HomeFragment();
+                        Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+                        startActivity(i);
+
+                        break;
+
+                    case R.id.nav_doctors:
+                        fragment = new DoctorFragment();
+                        Intent intent = new Intent(getApplicationContext(), DoctorList.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.nav_profile:
+                        fragment = new ProfileFragment();
+                        Intent profile = new Intent(getApplicationContext(), PatientProfileActivity.class);
+                        startActivity(profile);
+                        break;
+
+                    case R.id.nav_logout:
+                        fragment = new LogoutFragment();
+                        Amplify.Auth.signOut(
+                                () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                                error -> Log.e("AuthQuickstart", error.toString())
+                        );
+                        Intent logout = new Intent(getApplicationContext(), LogIn.class);
+                        startActivity(logout);
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
+
+                return true;
+            }
+        });
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
 
