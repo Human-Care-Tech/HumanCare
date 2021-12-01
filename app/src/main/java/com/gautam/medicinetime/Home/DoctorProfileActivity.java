@@ -65,7 +65,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
                         () -> Log.i("AuthQuickstart", "Signed out successfully"),
                         error -> Log.e("AuthQuickstart", error.toString())
                 );
-                Intent intent = new Intent(DoctorProfileActivity.this,DoctorLogin.class);
+                Intent intent = new Intent(DoctorProfileActivity.this,ChoiceActivity.class);
                 startActivity(intent);
             }
         });
