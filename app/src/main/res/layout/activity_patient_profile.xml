@@ -45,7 +45,7 @@
                     android:id="@+id/patientImage"
                     android:layout_width="160dp"
                     android:layout_height="200dp"
-                    android:src="@drawable/profile_round" />
+                    android:src="@drawable/profile_pic" />
 
                 <TextView
                     android:id="@+id/user_name"

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
 import com.amplifyframework.api.graphql.model.ModelMutation;
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
@@ -38,22 +39,21 @@ public class SplashActivity extends AppCompatActivity {
 
 //        createNotificationChannel();
 //
-//        AuthUser currentUser= Amplify.Auth.getCurrentUser();
+        AuthUser currentUser= Amplify.Auth.getCurrentUser();
 //
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                if(currentUser==null){
-//
-//
-//                }
-//                else {
-//                    System.out.println(currentUser.getUsername()+"hlooooooooooooooooooooooooooooo");
-//                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
-//                    startActivity(i);
-//                }
-                Intent i = new Intent(SplashActivity.this, ChoiceActivity.class);
-                startActivity(i);
+                if(currentUser==null){
+                    Intent i = new Intent(SplashActivity.this, ChoiceActivity.class);
+                    startActivity(i);
+
+                }
+                else {
+                    System.out.println(currentUser.getUsername()+"hlooooooooooooooooooooooooooooo");
+                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
+                    startActivity(i);
+                }
                 finish();
             }
         }, 2000);
