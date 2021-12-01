@@ -193,5 +193,4 @@ public class AppointmentList extends AppCompatActivity {
         builder.create().show();
     }
 
-
 }
